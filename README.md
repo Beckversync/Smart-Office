@@ -4,9 +4,9 @@
 [ IoT Devices ]
     └── Gửi dữ liệu (MQTT / HTTP / CoAP)
  |         ↓
- |  [ ThingsBoard Edge ]
+ |   [ ThingsBoard Edge ]
  |   ├── Thu thập dữ liệu tại site cục bộ
- |   ├── Xử lý sơ bộ / phân loại / AI tại Edge (tùy chọn)
+ |   ├── Xử lý sơ bộ / phân loại / AI tại Edge (optional)
  |   └── Gửi dữ liệu lên Integration Layer
  ↓         ↓
 [ Integration Layer (Gateway → Cloud) ]
@@ -21,7 +21,7 @@
  |           ├── Kết nối với Mobile App / Web App qua REST API / WebSocket         |                         |
  |           └── Cung cấp dữ liệu và điều khiển thiết bị cho End Users             |                         |
  ↓                                                                                 ↓                         ↓
-[ Rule Engine ]                                                      [ Real-time Dashboards ]       [ Mobile App / Web App ]
+[ Rule Engine ]                                                        [ Real-time Dashboards ]       [ Mobile App / Web App ]
     ├── Xử lý dữ liệu thời gian thực                                   ├── Hiển thị dữ liệu từ ThingsBoard Core → cho người dùng
     ├── Tạo cảnh báo (Alerting)                                        ├── Kết nối qua REST API / WebSocket
     ├── Kích hoạt hành động (gửi command)                              ├── Điều khiển thiết bị
