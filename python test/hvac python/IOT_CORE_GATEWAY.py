@@ -5,26 +5,28 @@ import json
 
 BROKER_ADDRESS = "app.coreiot.io"
 PORT = 1883
-ACCESS_TOKEN = "3I1prWraH3D4vdTqoqcf" 
+ACCESS_TOKEN = "Your_HVAC_Token" #password
 
 def subscribed(client, userdata, mid, granted_qos):
     print("Subscribed...")
-
 
 def recv_message(client, userdata, message):
     print("Received: ", message.payload.decode("utf-8"))
     temp_data = {'value': True}
     try:
         jsonobj = json.loads(message.payload)
-        if jsonobj['method'] == "setLedSwitchValue1":
-            temp_data['value'] = jsonobj['params']
-            #TODO HERE
+        if jsonobj['method'] == "setEnabled":
+            temp_data['enabled'] = jsonobj['params']
+            client.publish('v1/devices/me/telemetry', json.dumps(temp_data), 1)
 
-            #END TODO
             client.publish('v1/devices/me/attributes', json.dumps(temp_data), 1)
 
-        if jsonobj['method'] == "setLedSwitchValue2":
-            temp_data['value'] = jsonobj['params']
+        if jsonobj['method'] == "setTemperature":
+            temp_data['targetTemperature'] = jsonobj['params']
+            # TODO HERE
+            client.publish('v1/devices/me/telemetry', json.dumps(temp_data), 1)
+            # END TODO
+            client.publish('v1/devices/me/attributes', json.dumps(temp_data), 1)
 
     except:
         pass
@@ -38,7 +40,7 @@ def connected(client, usedata, flags, rc):
         print("Connection is failed")
 
 
-client = mqttclient.Client("Energy meter")
+client = mqttclient.Client("AAA")
 client.username_pw_set(ACCESS_TOKEN)
 
 client.on_connect = connected
@@ -48,20 +50,25 @@ client.loop_start()
 client.on_subscribe = subscribed
 client.on_message = recv_message
 
-amperage = 15.0
-energy = 130.3
-frequency = 61.0
-power = 5000.0
-voltage = 247.9
+temp = 30
+humi = 50
+light_intesity = 100
+counter = 0
+
+airFlow = 1.0
+enabled = True
+targetTemperature = 30
+
+#HCMUT
+long = 106.65789107082472
+lat = 10.772175109674038
+
+#H6
+#long = 106.80633605864662
+#lat = 10.880018410410052
 
 while True:
-    collect_data = {
-        'amperage': amperage,
-        'energy': energy,
-        'frequency': frequency,
-        'power': power,
-        'voltage': voltage
-    }
+    collect_data =  {'airFlow':airFlow }
+    airFlow +=  1.0
     client.publish('v1/devices/me/telemetry', json.dumps(collect_data), 1)
-
-    time.sleep(30)
+    time.sleep(5)
