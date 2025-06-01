@@ -23,9 +23,9 @@ constexpr char CURRENT_FIRMWARE_VERSION[] = "v2";
 constexpr uint8_t FIRMWARE_FAILURE_RETRIES = 12U;
 constexpr uint16_t FIRMWARE_PACKET_SIZE = 4096U;
 
-constexpr char WIFI_SSID[] = "Duy Bach";
-constexpr char WIFI_PASSWORD[] = "28082004";
-constexpr char TOKEN[] = "X6SgkwiM5FURLfxnF7Do";
+constexpr char WIFI_SSID[] = "Your_SSID"; // Replace with your WiFi SSID
+constexpr char WIFI_PASSWORD[] = "Your_Password"; // Replace with your WiFi Password
+constexpr char TOKEN[] = "Your_Device_Token"; // Replace with your ThingsBoard token
 constexpr char THINGSBOARD_SERVER[] = "app.coreiot.io"; //app.coreiot.io
 
 constexpr uint16_t THINGSBOARD_PORT = 1883U;
