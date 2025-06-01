@@ -18,16 +18,14 @@
 // #include <PubSubClient.h>
 
 constexpr int16_t TELEMETRY_SEND_INTERVAL = 5000U;
-constexpr char CURRENT_FIRMWARE_TITLE[] = "OTA_test";
-constexpr char CURRENT_FIRMWARE_VERSION[] = "1.0.2";
+constexpr char CURRENT_FIRMWARE_TITLE[] = "Smart Sensor";
+constexpr char CURRENT_FIRMWARE_VERSION[] = "v1";
 constexpr uint8_t FIRMWARE_FAILURE_RETRIES = 12U;
 constexpr uint16_t FIRMWARE_PACKET_SIZE = 4096U;
 
-
-
-constexpr char WIFI_SSID[] = "YOUR SSID";
-constexpr char WIFI_PASSWORD[] = "YOUR PASS";
-constexpr char TOKEN[] = "YOUR DEVICE TOKEN";
+constexpr char WIFI_SSID[] = "Your_SSID";
+constexpr char WIFI_PASSWORD[] = "Your_Password";
+constexpr char TOKEN[] = "2YQS8sZ9uLt9KmxFQbfF";
 constexpr char THINGSBOARD_SERVER[] = "app.coreiot.io";
 
 constexpr char TEMPERATURE_KEY[] = "temperature";
@@ -53,6 +51,14 @@ constexpr std::array<const char *, 2U> SHARED_ATTRIBUTES_LIST = {
   LED_STATE_ATTR,
   BLINKING_INTERVAL_ATTR
 };
+
+#define DHT11_SIGNAL_PIN 15
+#define MQ135_placa "Arduino UNO"
+#define MQ135_Voltage_Resolution 3.3
+#define MQ135_Pin 33 //Analog input 4 of your arduino
+#define MQ135_type "MQ-135" //MQ4
+#define MQ135_ADC_Bit_Resolution 10 // For arduino UNO/MEGA/NANO
+#define RatioMQ135CleanAir 3.6//RS / R0 = 3.6 ppm 
 
 WiFiClient espClient;
 Arduino_MQTT_Client mqttClient(espClient);
@@ -137,7 +143,6 @@ void processSharedAttributeRequest(const JsonObjectConst &data) {
   Serial.println(buffer);
 }
 
-// 
 void WiFiTask(void *pvParameters) {
   InitWiFi();
   while (true) {
@@ -175,41 +180,40 @@ void ThingsBoardTask(void *pvParameters) {
         continue;
       }
     }
-    // if (!currentFWSent) {
-    //   currentFWSent = ota.Firmware_Send_Info(CURRENT_FIRMWARE_TITLE, CURRENT_FIRMWARE_VERSION);
-    // }
+    if (!currentFWSent) {
+      currentFWSent = ota.Firmware_Send_Info(CURRENT_FIRMWARE_TITLE, CURRENT_FIRMWARE_VERSION);
+    }
 
-    // if (!updateRequestSent) {
-    //   const OTA_Update_Callback callback(
-    //     CURRENT_FIRMWARE_TITLE, CURRENT_FIRMWARE_VERSION,
-    //     &updater,
-    //     &finished_callback,
-    //     &progress_callback,
-    //     &update_starting_callback,
-    //     FIRMWARE_FAILURE_RETRIES,
-    //     FIRMWARE_PACKET_SIZE
-    //   );
+    if (!updateRequestSent) {
+      const OTA_Update_Callback callback(
+        CURRENT_FIRMWARE_TITLE, CURRENT_FIRMWARE_VERSION,
+        &updater,
+        &finished_callback,
+        &progress_callback,
+        &update_starting_callback,
+        FIRMWARE_FAILURE_RETRIES,
+        FIRMWARE_PACKET_SIZE
+      );
     
-    //   bool started = ota.Start_Firmware_Update(callback);
-    //   bool subscribed = ota.Subscribe_Firmware_Update(callback);
+      bool started = ota.Start_Firmware_Update(callback);
+      bool subscribed = ota.Subscribe_Firmware_Update(callback);
     
-    //   if (started && subscribed) {
-    //     Serial.println("Firmware Update Started & Subscribed.");
-    //     updateRequestSent = true;
-    //   } else {
-    //     Serial.println("Firmware Update FAILED to start or subscribe.");
-    //   }
-    // }    
+      if (started && subscribed) {
+        Serial.println("Firmware Update Started & Subscribed.");
+        updateRequestSent = true;
+      } else {
+        Serial.println("Firmware Update FAILED to start or subscribe.");
+      }
+    }    
     tb.loop();
     vTaskDelay(pdMS_TO_TICKS(100));
   }
 }
 
-#define DHT11_SIGNAL_PIN 15
-float temperature = 0.0;
-float humidity = 0.0;
 void READ_DHT_TASK(void *pvParameters) 
 {
+  float temperature = 0.0;
+  float humidity = 0.0;
    //Wire.begin(SDA_PIN, SCL_PIN);
    //DHT20 dht20;
    //dht20.begin();
@@ -241,14 +245,8 @@ void READ_DHT_TASK(void *pvParameters)
    }
 }
 
-#define MQ135_placa "Arduino UNO"
-#define MQ135_Voltage_Resolution 3.3
-#define MQ135_Pin 33 //Analog input 4 of your arduino
-#define MQ135_type "MQ-135" //MQ4
-#define MQ135_ADC_Bit_Resolution 10 // For arduino UNO/MEGA/NANO
-#define RatioMQ135CleanAir 3.6//RS / R0 = 3.6 ppm 
-float air_quality = 0.0; 
 void READ_MQ135_TASK(void *pvParameter){
+  float air_quality = 0.0; 
    //Init the serial port communication - to debug the library
   MQUnifiedsensor MQ135(MQ135_placa, MQ135_Voltage_Resolution, MQ135_ADC_Bit_Resolution, MQ135_Pin, MQ135_type);
 
@@ -266,7 +264,6 @@ void READ_MQ135_TASK(void *pvParameter){
   NH4      | 102.2  | -2.473
   Aceton  | 34.668 | -3.369
   */
-  
   /*****************************  MQ Init ********************************************/ 
   //Remarks: Configure the pin of arduino as input.
   /************************************************************************************/ 
@@ -317,12 +314,14 @@ void setup() {
   delay(1000);
   xTaskCreatePinnedToCore(WiFiTask, "WiFiTask", 4096, NULL, 1, NULL, 0);
   xTaskCreatePinnedToCore(ThingsBoardTask, "TBTask", 8192, NULL, 1, NULL, 1);
-  xTaskCreatePinnedToCore(READ_DHT_TASK, "TREAD_DHT_TASK", 8192, NULL, 1, NULL, 1);
-  xTaskCreatePinnedToCore(READ_MQ135_TASK, "TREAD_DHT_TASK", 8192, NULL, 1, NULL, 1);
+  //xTaskCreatePinnedToCore(READ_DHT_TASK, "TREAD_DHT_TASK", 8192, NULL, 1, NULL, 1);
+  //xTaskCreatePinnedToCore(READ_MQ135_TASK, "TREAD_DHT_TASK", 8192, NULL, 1, NULL, 1);
 }
 
 void loop() {
   // Empty - all logic runs in FreeRTOS tasks
+  Serial.println("Smart Sensor is running...");
+  delay(2000); // Delay to prevent flooding the serial output
 }
 
 
