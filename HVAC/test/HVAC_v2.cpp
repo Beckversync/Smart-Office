@@ -12,7 +12,7 @@
 
 
 constexpr char CURRENT_FIRMWARE_TITLE[] = "HVAC";
-constexpr char CURRENT_FIRMWARE_VERSION[] = "v1";
+constexpr char CURRENT_FIRMWARE_VERSION[] = "v2";
 
 // Maximum amount of retries we attempt to download each firmware chunck over MQTT
 constexpr uint8_t FIRMWARE_FAILURE_RETRIES = 12U;
@@ -216,7 +216,7 @@ void TEST(void *pvParameters)
   {
     // Do something
     Serial.println("TEST V1 is running");
-    vTaskDelay(2000 / portTICK_PERIOD_MS);
+    vTaskDelay(5000 / portTICK_PERIOD_MS);
   }
 }
 
@@ -228,7 +228,7 @@ void setup()
   analogWrite(FAN_PIN, 0); // Đặt quạt ban đầu tắt
   delay(1000);
   InitWiFi();
-  xTaskCreate(TEST, "TEST", 2048, nullptr, 1, nullptr); // Tạo task TEST
+  //xTaskCreate(TEST, "TEST", 2048, nullptr, 1, nullptr); // Tạo task TEST
 }
 
 void loop()
