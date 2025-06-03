@@ -1,0 +1,1 @@
+ALTER TABLE calculation_field_task_data ADD COLUMN IF NOT EXISTS enabled BOOLEAN NOT NULL DEFAULT FALSE;

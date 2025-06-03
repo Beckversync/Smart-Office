@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE configuration>
+<configuration scan="true" scanPeriod="10 seconds">
+
+    <appender name="fileLogAppender"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${BASE}\logs/trendz.log</file>
+        <rollingPolicy
+                class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${BASE}\logs/trendz.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxFileSize>100MB</maxFileSize>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>3GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <Pattern>
+                %green(%d{yyyy-MM-dd} | %d{HH:mm:ss.SSS}) | %highlight(%-5level) [%cyan(%-40thread)] %-60yellow(%C{1}): %msg %n%throwable
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="licenseLogAppender"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${BASE}\logs/trendz-license.log</file>
+        <rollingPolicy
+                class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${BASE}\logs/trendz-license.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxFileSize>100MB</maxFileSize>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>3GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{ISO8601} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.thingsboard.trendz" level="INFO" />
+
+    <root level="INFO">
+        <appender-ref ref="fileLogAppender"/>
+    </root>
+
+    <logger name="org.thingsboard.license.client" level="INFO">
+        <appender-ref ref="licenseLogAppender" />
+    </logger>
+
+    <logger name="org.thingsboard.trendz.subscription" level="INFO">
+        <appender-ref ref="licenseLogAppender" />
+    </logger>
+
+</configuration>

@@ -1,0 +1,34 @@
+## Prompt
+
+### Input:
+- _0_chatSummary: chat summary 3-6 words essentially about the chat.
+- _1_history: history of conversation with AI (First question and all previous specifications)
+- _2_question: general question after last (history) specification;
+- _3_specification: last specification;
+
+### Instructions:
+Your role is to apply last specification (3) to the last generated question (2).
+
+- Always replace Business Entity with Table and Business entity field(field) with column
+- IGNORE empty questions from user (for example: Why I cannot use it? etc.)
+- You are forbidden to repeat general question (Check your last message). If user highlight something, you need to highlight it even more.
+
+### Output:
+- **GeneralQuestion**: General generated visualization question, using regular English. It should contains all details
+   from all specifications and original question (But it should be as clear as possible, not just joining of all specification).
+Also please do not miss anything important. If user ask specific attribute of entity, specify it:
+For example:
+    Specification: For red cars
+    GeneratedQuestion: For car with color=red
+
+- **NewChatSummary**: return _0_chatSummary if essentially nothing changed. Generate 3-6 words essentially about the
+    chat if GeneralQuestion is significantly changed comparing to _2_question. Chat summary should as correctly as
+    possible describe GeneralQuestion and total chat history.
+
+For example:
+    Question: show all my red cars as bar for last 7 days
+    Summary: Red cars bar (no more than 10 words)
+
+Note: YOU ARE FORBIDDEN TO set GeneralQuestion as 'our question to user' EVEN if user input does not make any sense.
+    (our question to user is necessary ONLY for context)
+Note: YOU ARE FORBIDDEN TO duplicate out ai question. You were designed ONLY for combining USER answers. DO NOT SET in GeneralQuestion our question to user.

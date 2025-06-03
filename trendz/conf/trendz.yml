@@ -1,0 +1,381 @@
+application:
+  version: 1.13.1
+
+server.address: "${HTTP_BIND_ADDRESS:0.0.0.0}"
+server.port: "${HTTP_BIND_PORT:8888}"
+
+spring.mvc.async.request-timeout: "${HTTP_REQUEST_TIMEOUT:60000}"
+
+server.error.include-message: always
+server.error.path: "/error"
+server.compression.enabled: true
+server.compression.mime-types: "text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json"
+server.compression.min-response-size: 1024
+
+security:
+  jwt:
+    tokenExpirationTime: "${JWT_TOKEN_EXPIRATION_TIME:9000}" # Number of seconds (2.5 hours)
+    tokenIssuer: "${JWT_TOKEN_ISSUER:thingsboard.io}"
+    tokenSigningKey: "${JWT_TOKEN_SIGNING_KEY:thingsboardDefaultSigningKey}"
+
+tb.api:
+  url: "${TB_API_URL:http://localhost:8080}"
+  custom-dns:
+    enabled: "${TB_API_CUSTOM_DNS_ENABLE:false}"
+    dns-address: "${TB_API_CUSTOM_DNS_ADDRESS:8.8.8.8}"
+  limits:
+    pagesize:
+      items: "${TB_API_LIMITS_PAGESIZE_ITEMS:100000}"
+      telemetry: "${TB_API_LIMITS_PAGESIZE_TELEMETRY:1000000}"
+    send:
+      items: "${TB_API_LIMITS_SEND_ITEMS:10}"
+  retry:
+    maxAttempts: "${TB_API_RETRY_MAX_ATTEMPTS:3}"
+    timeout: "${TB_API_RETRY_TIMEOUT:10}"
+  version-checker:
+    use-default-set: "${TB_API_VERSION_DEFAULT_SET:true}"
+    default-version: "${TB_API_VERSION_DEFAULT:V_3_6_1}"
+    default-pe: "${TB_API_VERSION_PE_DEFAULT:false}"
+    default-cloud: "${TB_API_VERSION_CLOUD_DEFAULT:false}"
+
+    use-manual-set: "${TB_API_VERSION_MANUAL_SET:false}"
+    manual-version: "${TB_API_VERSION_MANUAL:V_3_6_1}"
+    manual-pe: "${TB_API_VERSION_PE_MANUAL:false}"
+    manual-cloud: "${TB_API_VERSION_CLOUD_MANUAL:false}"
+  widgetBundle:
+    maxExpectedDuplicateCount: "${TB_API_WIDGET_BUNDLE_MAX_EXPECTED_DUPLICATE_COUNT:10}"
+
+ratelimit:
+  duration.sec: "${RATELIMIT_DURATION_SEC:1}"
+  max_requests_per_duration: "${RATELIMIT_MAX_REQUESTS:5000}"
+  max_concurent_requests: "${RATELIMIT_CONCURRENT_REQUESTS:8}"
+  sendTelemetryBatchSize: "${RATELIMIT_SEND_TELEMETRY_BATCH_SIZE:10}"
+  sendTelemetryIntervalMs: "${RATELIMIT_SEND_TELEMETRY_INTERVAL_MS:100}"
+  cloud:
+    ##  see https://thingsboard.io/products/paas/subscription/ for more
+    seconds: "${CLOUD_RATE_LIMIT_SECONDS:150}"
+    minutes: "${CLOUD_RATE_LIMIT_MINUTES:6000}"
+    hours: "${CLOUD_RATE_LIMIT_HOURS:140000}"
+    useCloudRateLimiting: "${CLOUD_RATE_LIMIT_ENABLED:false}"
+
+webclient:
+  logging: "${REST_LOGGING:false}"
+  custom_header:
+    key: "${REST_HEADER_KEY:custom_header_key}"
+    value: "${REST_HEADER_VALUE:custom_header_value}"
+
+management:
+  endpoints:
+    metrics:
+      enabled: true
+    web:
+      exposure:
+        include: "${ACTUATOR_ENDPOINTS_INCLUDE:status, health, info, env, metrics, prometheus}"
+        exclude: "${ACTUATOR_ENDPOINTS_EXCLUDE:*}"
+  health:
+    show-details: always
+    redis:
+      enabled: "${CACHE_REDIS_HEALTH_ENABLE:false}"
+  metrics:
+    enable:
+      jvm: true
+    export:
+      prometheus:
+        enabled: true
+    distribution:
+      percentiles-histogram:
+        "[http.server.requests]": true
+
+spring.mvc.cors:
+  mappings:
+    # Intercept path
+    "[/**]":
+      #Comma-separated list of origins to allow. '*' allows all origins. When not set,CORS support is disabled.
+      allowed-origins: "*"
+      #Comma-separated list of methods to allow. '*' allows all methods.
+      allowed-methods: "POST,GET,OPTIONS"
+      #Comma-separated list of headers to allow in a request. '*' allows all headers.
+      allowed-headers: "*"
+      #How long, in seconds, the response from a pre-flight request can be cached by clients.
+      max-age: "1800"
+      #Set whether credentials are supported. When not set, credentials are not supported.
+      allow-credentials: "true"
+    "[/api/v1/**]":
+      allowed-origins: "*"
+      allowed-methods: "*"
+      allowed-headers: "*"
+      max-age: "1800"
+      allow-credentials: "true"
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  jackson:
+    property-naming-strategy: LOWER_CAMEL_CASE
+  data:
+    jpa:
+      repositories:
+        enabled: "true"
+    redis:
+      repositories:
+        enabled: "false"
+
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: false
+        show_sql: false
+        order_inserts: true
+        order_updates: true
+        generate_statistics: false
+        jdbc:
+          batch_versioned_data: true
+          batch_size: 10000
+          lob:
+            non_contextual_creation: true
+        types:
+          print:
+            banner: false
+    hibernate:
+      ddl-auto: "validate"
+    database-platform: "${SPRING_JPA_DATABASE_PLATFORM:org.hibernate.dialect.PostgreSQLDialect}"
+  datasource:
+    driverClassName: "${SPRING_DRIVER_CLASS_NAME:org.postgresql.Driver}"
+    url: "${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:1883/trendz}"
+    username: "${SPRING_DATASOURCE_USERNAME:postgres}"
+    password: "${SPRING_DATASOURCE_PASSWORD:postgres}"
+    hikari:
+      maximumPoolSize: "${SPRING_DATASOURCE_MAXIMUM_POOL_SIZE:5}"
+
+cache:
+  # caffeine or redis
+  type: "${CACHE_TYPE:caffeine}"
+  specs:
+    jwtToken:
+      timeToLiveInMinutes: 175
+      maxSize: 200000
+    jwtTokenValidation:
+      timeToLiveInMinutes: 175
+      maxSize: 200000
+    apiCalls:
+      timeToLiveInMinutes: 1
+      maxSize: 200000
+    viewReports:
+      timeToLiveInMinutes: 5
+      maxSize: 1000000
+    beTopology:
+      timeToLiveInMinutes: 1440
+      maxSize: 10000
+    businessEntities:
+      timeToLiveInMinutes: 1440
+      maxSize: 10000
+    businessEntityFields:
+      timeToLiveInMinutes: 1440
+      maxSize: 10000
+    tenantInitStatusCache:
+      timeToLiveInMinutes: 1440
+      maxSize: 10000
+    domainTrackCache:
+      timeToLiveInMinutes: 60
+      maxSize: 10000
+    userTrackCache:
+      timeToLiveInMinutes: 60
+      maxSize: 10000
+    tenantCustomViewSettingsCache:
+      timeToLiveInMinutes: 60
+      maxSize: 10000
+    subcustomerCache:
+      timeToLiveInMinutes: 600
+      maxSize: 10000
+    tenantCustomerInfoCache:
+      timeToLiveInMinutes: 600
+      maxSize: 10000
+    scriptLoggerCache:
+      timeToLiveInMinutes: 30
+      maxSize: 10000
+    metricTenantNameCache:
+      timeToLiveInMinutes: 60
+      maxSize: 10000
+    metricCustomerNameCache:
+      timeToLiveInMinutes: 60
+      maxSize: 10000
+    userTaskInitializationCache:
+      timeToLiveInMinutes: 60
+      maxSize: 10000
+    viewAssistanceChatQuota:
+      timeToLiveInMinutes: "${viewAssistance.quota.durationInMinutes}"
+      maxSize: 10000
+
+redis:
+  host: "${REDIS_HOST:localhost}"
+  port: "${REDIS_PORT:6379}"
+
+caffeine:
+# another caffeine configs
+
+
+cache.report:
+  enabled: "${CACHE_REPORT_ENABLED:true}"
+  sessionDurationInMinutes: "${CACHE_REPORT_SESSION_DURATION_MINUTES:10}"
+
+script-engine:
+  provider: "${SCRIPT_ENGINE_PROVIDER:LOCAL_MACHINE}" # DOCKER_CONTAINER, LOCAL_MACHINE
+  use-custom-venv: "${SCRIPT_ENGINE_USE_CUSTOM_VENV:true}"
+  custom-venv-path: "${SCRIPT_ENGINE_CUSTOM_VENV_PATH:/usr/bin/python3}"
+  runtime-timeout: "${SCRIPT_ENGINE_TIMEOUT:10000}"
+  callback-timeout: "${SCRIPT_ENGINE_TIMEOUT:13000}"
+  docker-provider-url: "${SCRIPT_ENGINE_DOCKER_PROVIDER_URL:localhost:8181}"
+  websocket-buffer-size: "${SCRIPT_ENGINE_WEBSOCKET_BUFFER_SIZE:20971520}"
+  websocket-concurrency: "${SCRIPT_ENGINE_WEBSOCKET_CONCURRENCY:5}"
+
+taskService:
+  enable: "${TASK_SERVICE_ENABLE:true}"
+  enableBackground: "${TASK_SERVICE_BACKGROUND_ENABLE:true}"
+  ttlTrackingEnable: "${TASK_SERVICE_TTL_TRACKING_ENABLE:true}"
+  lostTrackingEnable: "${TASK_SERVICE_LOST_TRACKING_ENABLE:true}"
+  taskQuerySize: "${TASK_SERVICE_TASK_QUERY_SIZE:10}"
+  defaultTaskTimeout: "${TASK_SERVICE_DEFAULT_TASK_TIMEOUT:86400000}"
+  stateRecordTimeout: "${TASK_SERVICE_STATE_RECORD_TIMEOUT:5000}"
+
+executors:
+  type:
+    executorManagementLogging: "${EXECUTORS_EXECUTOR_MANAGEMENT_LOGGING_TYPE:SCHEDULED}"
+    rateLimitLogging: "${EXECUTORS_RATE_LIMIT_LOGGING_TYPE:SCHEDULED}"
+    taskServiceScheduling: "${EXECUTORS_TASK_SERVICE_SCHEDULING_TYPE:SCHEDULED}"
+    taskProgressStepServiceScheduling: "${EXECUTORS_PROGRESS_STEP_TASK_SERVICE_SCHEDULING_TYPE:SCHEDULED}"
+    simpleApiThrottling: "${EXECUTORS_SIMPLE_API_THROTTLING_TYPE:THROTTLING}"
+    statsCollector: "${EXECUTORS_STATS_COLLECTOR_TYPE:SCHEDULED}"
+    nashornJs: "${EXECUTORS_NASHORN_JS_TYPE:SCHEDULED}"
+  threadCount:
+    executorManagementLogging: "${EXECUTORS_EXECUTOR_MANAGEMENT_LOGGING_THREAD_COUNT:1}"
+    rateLimitLogging: "${EXECUTORS_RATE_LIMIT_LOGGING_THREAD_COUNT:1}"
+    taskServiceScheduling: "${EXECUTORS_TASK_SERVICE_SCHEDULING_THREAD_COUNT:1}"
+    taskProgressStepServiceScheduling: "${EXECUTORS_PROGRESS_STEP_TASK_SERVICE_SCHEDULING_THREAD_COUNT:1}"
+    taskSequenceExecutionScheduling: "${TASK_SEQUENCE_EXECUTION_SCHEDULING_THREAD_COUNT:1}"
+    migrationScheduling: "${MIGRATION_SCHEDULING_THREAD_COUNT:1}"
+    simpleApiThrottling: "${EXECUTORS_SIMPLE_API_THROTTLING_THREAD_COUNT:1}"
+    scriptEngine: "${EXECUTORS_SCRIPT_ENGINE_THREAD_COUNT:8}"
+    webClientFirst: "${EXECUTORS_WEB_CLIENT_1_THREAD_COUNT:20}"
+    webClientSecond: "${EXECUTORS_WEB_CLIENT_2_THREAD_COUNT:20}"
+    asyncDao: "${EXECUTORS_ASYNC_DAO_THREAD_COUNT:20}"
+    filterOptions: "${EXECUTORS_FILTER_OPTION_THREAD_COUNT:4}"
+    alarmRequest: "${EXECUTORS_ALARM_REQUEST_THREAD_COUNT:4}"
+    uiBuild: "${EXECUTORS_UI_BUILD_THREAD_COUNT:2}"
+    uiPostBuild: "${EXECUTORS_UI_POST_BUILD_THREAD_COUNT:2}"
+    modelBuild: "${EXECUTORS_MODEL_BUILD_THREAD_COUNT:1}"
+    tracking: "${EXECUTORS_TRACKING_THREAD_COUNT:1}"
+    topologyDiscovery: "${EXECUTORS_TOPOLOGY_DISCOVERY_THREAD_COUNT:1}"
+    statsCollector: "${EXECUTORS_STATS_COLLECTOR_THREAD_COUNT:1}"
+    nashornJs: "${EXECUTORS_NASHORN_JS_THREAD_COUNT:1}"
+    backgroundTask: "${EXECUTORS_BACKGROUND_TASK_THREAD_COUNT:2}"
+    storeReader1: "${EXECUTORS_STORE_READER_1_THREAD_COUNT:10}"
+    storeReader2: "${EXECUTORS_STORE_READER_2_THREAD_COUNT:10}"
+    assistanceRequestProcessor: "${EXECUTORS_ASSISTANCE_REQUEST_PROCESS_THREAD_COUNT:10}"
+    customPromptProcessor: "${EXECUTORS_PROMPT_REQUEST_PROCESS_THREAD_COUNT:10}"
+    viewAiSummaryProcessor: "${EXECUTORS_VIEW_AI_SUMMARY_REQUEST_PROCESS_THREAD_COUNT:10}"
+    agentProcessor: "${EXECUTORS_AGENT_PROCESS_THREAD_COUNT:10}"
+  queueSize:
+    simpleApiThrottling: "${EXECUTORS_SIMPLE_API_THROTTLING_QUEUE_SIZE:10}"
+
+viewAssistance:
+  enable: "${VIEW_ASSISTANCE_ENABLE:true}"
+  agentAdminConsole:
+    enable: "${VIEW_ASSISTANCE_AGENT_ADMIN_CONSOLE_ENABLE:true}"
+  customPromptApi:
+    enable: "${PROMPT_API_ENABLE:true}"
+  quota:
+    enable: "${VIEW_ASSISTANCE_QUOTA_ENABLE:true}"
+    maxRequestsForSystem: "${VIEW_ASSISTANCE_MAX_REQUESTS_COUNT_FOR_QUOTA_FOR_SYSTEM:200}"
+    maxRequestsForTenant: "${VIEW_ASSISTANCE_MAX_REQUESTS_COUNT_FOR_QUOTA_FOR_TENANT:40}"
+    maxRequestsForCustomer: "${VIEW_ASSISTANCE_MAX_REQUESTS_COUNT_FOR_QUOTA_FOR_CUSTOMER:10}"
+    maxRequestsForUser: "${VIEW_ASSISTANCE_MAX_REQUESTS_COUNT_FOR_QUOTA_FOR_USER:6}"
+    durationInMinutes: "${VIEW_ASSISTANCE_QUOTA_DURATION_IN_MINUTES:1}"
+  model:
+    provider: "${VIEW_ASSISTANCE_MODEL_PROVIDER:GOOGLE}"
+    name: "${VIEW_ASSISTANCE_MODEL_NAME:gemini-2.0-flash}"
+    apiProperties:
+      openAi:
+        apiKey: "${VIEW_ASSISTANCE_MODEL_PROPERTIES_OPEN_AI_API_KEY:your_open_ai_api_key}"
+      google:
+        apiKey: "${VIEW_ASSISTANCE_MODEL_PROPERTIES_GOOGLE_API_KEY:your_google_api_key}"
+      aws:
+        accessKey: "${VIEW_ASSISTANCE_MODEL_PROPERTIES_AWS_ACCESS_KEY:your_aws_access_key}"
+        secretKey: "${VIEW_ASSISTANCE_MODEL_PROPERTIES_AWS_SECRET_KEY:your_aws_secret_key}"
+        region: "${VIEW_ASSISTANCE_MODEL_PROPERTIES_AWS_REGION:us-east-1}"
+    pricing:
+      open-ai:
+        gpt-4o:
+          input: "${VIEW_ASSISTANCE_OPEN_AI_GPT_4_O_INPUT_PRICE:2.5}"
+          output: "${VIEW_ASSISTANCE_OPEN_AI_GPT_4_O_OUTPUT_PRICE:10}"
+        gpt-4o-mini:
+          input: "${VIEW_ASSISTANCE_OPEN_AI_GPT_4_O_MINI_INPUT_PRICE:0.15}"
+          output: "${VIEW_ASSISTANCE_OPEN_AI_GPT_4_O_MINI_OUTPUT_PRICE:0.6}"
+        o3-mini:
+          input: "${VIEW_ASSISTANCE_OPEN_AI_O3_MINI_INPUT_PRICE:1.1}"
+          output: "${VIEW_ASSISTANCE_OPEN_AI_O3_MINI_OUTPUT_PRICE:4.4}"
+        o4-mini:
+          input: "${VIEW_ASSISTANCE_OPEN_AI_O4_MINI_INPUT_PRICE:1.1}"
+          output: "${VIEW_ASSISTANCE_OPEN_AI_O4_MINI_OUTPUT_PRICE:4.4}"
+      google:
+        gemini-1-5-pro:
+          input: "${VIEW_ASSISTANCE_GOOGLE_GEMINI_1_5_PRO_INPUT_PRICE:1.25}"
+          output: "${VIEW_ASSISTANCE_GOOGLE_GEMINI_1_5_PRO_OUTPUT_PRICE:5}"
+        gemini-1-5-flash:
+          input: "${VIEW_ASSISTANCE_GOOGLE_GEMINI_1_5_FLASH_INPUT_PRICE:0.075}"
+          output: "${VIEW_ASSISTANCE_GOOGLE_GEMINI_1_5_FLASH_OUTPUT_PRICE:0.3}"
+        gemini-2-0-flash:
+          input: "${VIEW_ASSISTANCE_GOOGLE_GEMINI_2_0_FLASH_INPUT_PRICE:0.1}"
+          output: "${VIEW_ASSISTANCE_GOOGLE_GEMINI_2_0_FLASH_OUTPUT_PRICE:0.4}"
+        gemini-2-0-flash-lite:
+          input: "${VIEW_ASSISTANCE_GOOGLE_GEMINI_2_0_FLASH_LITE_INPUT_PRICE:0.075}"
+          output: "${VIEW_ASSISTANCE_GOOGLE_GEMINI_2_0_FLASH_LITE_OUTPUT_PRICE:0.3}"
+      amazon-bedrock:
+        meta-llama3-1-70b-instruct:
+          input: "${VIEW_ASSISTANCE_AMAZON_BEDROCK_META_LLAMA_3_1_70B_INSTRUCT_INPUT_PRICE:0.72}"
+          output: "${VIEW_ASSISTANCE_AMAZON_BEDROCK_META_LLAMA_3_1_70B_INSTRUCT_OUTPUT_PRICE:0.72}"
+        meta-llama3-2-90b-instruct:
+          input: "${VIEW_ASSISTANCE_AMAZON_BEDROCK_META_LLAMA_3_2_90B_INSTRUCT_INPUT_PRICE:0.72}"
+          output: "${VIEW_ASSISTANCE_AMAZON_BEDROCK_META_LLAMA_3_2_90B_INSTRUCT_OUTPUT_PRICE:0.72}"
+        meta-llama3-3-70b-instruct:
+          input: "${VIEW_ASSISTANCE_AMAZON_BEDROCK_META_LLAMA_3_3_70B_INSTRUCT_INPUT_PRICE:0.72}"
+          output: "${VIEW_ASSISTANCE_AMAZON_BEDROCK_META_LLAMA_3_3_70B_INSTRUCT_OUTPUT_PRICE:0.72}"
+        anthropic-claude-3-5-haiku:
+          input: "${VIEW_ASSISTANCE_AMAZON_BEDROCK_ANTHROPIC_CLAUDE_3_5_HAIKU_INPUT_PRICE:0.8}"
+          output: "${VIEW_ASSISTANCE_AMAZON_BEDROCK_ANTHROPIC_CLAUDE_3_5_HAIKU_OUTPUT_PRICE:4}"
+        anthropic-claude-3-5-sonnet:
+          input: "${VIEW_ASSISTANCE_AMAZON_BEDROCK_ANTHROPIC_CLAUDE_3_5_SONNET_INPUT_PRICE:3}"
+          output: "${VIEW_ASSISTANCE_AMAZON_BEDROCK_ANTHROPIC_CLAUDE_3_5_SONNET_OUTPUT_PRICE:15}"
+        anthropic-claude-3-7-sonnet:
+          input: "${VIEW_ASSISTANCE_AMAZON_BEDROCK_ANTHROPIC_CLAUDE_3_7_SONNET_INPUT_PRICE:3}"
+          output: "${VIEW_ASSISTANCE_AMAZON_BEDROCK_ANTHROPIC_CLAUDE_3_7_SONNET_OUTPUT_PRICE:15}"
+        amazon-nova-lite:
+          input: "${VIEW_ASSISTANCE_AMAZON_BEDROCK_AMAZON_NOVA_LITE_INPUT_PRICE:0.06}"
+          output: "${VIEW_ASSISTANCE_AMAZON_BEDROCK_AMAZON_NOVA_LITE_OUTPUT_PRICE:0.24}"
+        amazon-nova-pro:
+          input: "${VIEW_ASSISTANCE_AMAZON_BEDROCK_AMAZON_NOVA_PRO_INPUT_PRICE:0.8}"
+          output: "${VIEW_ASSISTANCE_AMAZON_BEDROCK_AMAZON_NOVA_PRO_OUTPUT_PRICE:3.2}"
+        mistral-large:
+          input: "${VIEW_ASSISTANCE_AMAZON_BEDROCK_MISTRAL_LARGE_INPUT_PRICE:3}"
+          output: "${VIEW_ASSISTANCE_AMAZON_BEDROCK_MISTRAL_LARGE_OUTPUT_PRICE:12}"
+  agent:
+    topologyTokenLimit: "${VIEW_ASSISTANCE_TOPOLOGY_TOKEN_LIMIT:32000}"
+  limits:
+    total: "${VIEW_ASSISTANCE_TOTAL_TOKEN_LIMIT:400}"
+    maker: "${VIEW_ASSISTANCE_MAKER_TOKEN_LIMIT:0.5}"
+    prototype: "${VIEW_ASSISTANCE_PROTOTYPE_TOKEN_LIMIT:5}"
+    startup: "${VIEW_ASSISTANCE_STARTUP_TOKEN_LIMIT:12.5}"
+    business: "${VIEW_ASSISTANCE_BUSINESS_TOKEN_LIMIT:22.5}"
+
+measurement.enable: "${MEASUREMENT_ENABLE:false}"
+scheduled-service.enable: "${SCHEDULED_SERVICE_ENABLE:true}"
+
+deployment:
+  cloud: "${TRENDZ_CLOUD_VERSION:false}"
+  test: "${TRENDZ_TEST_VERSION:false}"
+  secret: "${TRENDZ_SECRET:uYNrAQs0j/e8S5wPPgFuAR9rLoYl7OIL2dk8HL5qPhg=}"
+
+
+license:
+  secret: "${TRENDZ_LICENSE_SECRET:MToQoo0qkAAHNPn0VM9SJLEQ}" # license secret obtained from ThingsBoard License Portal (https://license.thingsboard.io)
+  instance_data_file: "${TRENDZ_LICENSE_INSTANCE_DATA_FILE:instance-license.data}"

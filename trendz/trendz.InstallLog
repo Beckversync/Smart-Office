@@ -1,0 +1,13 @@
+﻿Installing assembly 'C:\Program Files\trendz\trendz.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = C:\Program Files\trendz\trendz.exe
+   logfile = C:\Program Files\trendz\trendz.InstallLog
+No public installers with the RunInstallerAttribute.Yes attribute could be found in the C:\Program Files\trendz\trendz.exe assembly.
+Committing assembly 'C:\Program Files\trendz\trendz.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = C:\Program Files\trendz\trendz.exe
+   logfile = C:\Program Files\trendz\trendz.InstallLog
+No public installers with the RunInstallerAttribute.Yes attribute could be found in the C:\Program Files\trendz\trendz.exe assembly.
+Remove InstallState file because there are no installers.

@@ -1,0 +1,7 @@
+Error: LinkageError occurred while loading main class org.springframework.boot.loader.launch.PropertiesLauncher
+	java.lang.UnsupportedClassVersionError: org/springframework/boot/loader/launch/PropertiesLauncher has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 55.0
+Error: LinkageError occurred while loading main class org.springframework.boot.loader.launch.PropertiesLauncher
+	java.lang.UnsupportedClassVersionError: org/springframework/boot/loader/launch/PropertiesLauncher has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 55.0
+OpenJDK 64-Bit Server VM warning: Option UseBiasedLocking was deprecated in version 15.0 and will likely be removed in a future release.
+OpenJDK 64-Bit Server VM warning: Option UseBiasedLocking was deprecated in version 15.0 and will likely be removed in a future release.
+OpenJDK 64-Bit Server VM warning: Option UseBiasedLocking was deprecated in version 15.0 and will likely be removed in a future release.
