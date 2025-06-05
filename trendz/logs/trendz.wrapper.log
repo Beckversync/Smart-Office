@@ -20,3 +20,306 @@
 2025-06-03 14:30:31,555 INFO  - Starting java  -Dplatform=windows "-Dinstall.data_dir=C:\Program Files (x86)\trendz\data" "-Xlog:gc*,heap*,age*,safepoint=debug:file=C:\Program Files (x86)\trendz\logs\gc.log:time,uptime,level,tags:filecount=10,filesize=10M" -XX:+HeapDumpOnOutOfMemoryError -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10 -Xms512m -Xmx1024m -jar "C:\Program Files (x86)\trendz\lib\trendz.jar" 
 2025-06-03 14:30:31,556 INFO  - Starting java  -Dplatform=windows "-Dinstall.data_dir=C:\Program Files (x86)\trendz\data" "-Xlog:gc*,heap*,age*,safepoint=debug:file=C:\Program Files (x86)\trendz\logs\gc.log:time,uptime,level,tags:filecount=10,filesize=10M" -XX:+HeapDumpOnOutOfMemoryError -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10 -Xms512m -Xmx1024m -jar "C:\Program Files (x86)\trendz\lib\trendz.jar" 
 2025-06-03 14:30:31,560 INFO  - Started 13928
+2025-06-03 15:30:15,247 INFO  - Stopping trendz
+2025-06-03 15:30:15,247 DEBUG - ProcessKill 13928
+2025-06-03 15:30:15,580 INFO  - Found child process: 7792 Name: conhost.exe
+2025-06-03 15:30:15,780 INFO  - Stopping process 7792
+2025-06-03 15:30:15,805 INFO  - Send SIGINT 7792
+2025-06-03 15:30:15,805 WARN  - SIGINT to 7792 failed - Killing as fallback
+2025-06-03 15:30:15,813 INFO  - Stopping process 13928
+2025-06-03 15:30:15,835 INFO  - Send SIGINT 13928
+2025-06-03 15:30:15,835 WARN  - SIGINT to 13928 failed - Killing as fallback
+2025-06-03 15:30:15,843 INFO  - Finished trendz
+2025-06-03 15:30:15,845 INFO  - Completed. Exit code is 0
+2025-06-03 16:19:46,920 INFO  - Starting ServiceWrapper in the CLI mode
+2025-06-03 16:19:47,942 FATAL - Unhandled exception
+System.Exception: Installation failure: Service with id 'trendz' already exists
+   at winsw.WrapperService.Run(String[] _args, ServiceDescriptor descriptor)
+   at winsw.WrapperService.Main(String[] args)
+2025-06-03 16:24:38,662 INFO  - Starting ServiceWrapper in the service mode
+2025-06-03 16:24:38,672 INFO  - Starting java  -Dplatform=windows "-Dinstall.data_dir=C:\Program Files (x86)\trendz\data" "-Xlog:gc*,heap*,age*,safepoint=debug:file=C:\Program Files (x86)\trendz\logs\gc.log:time,uptime,level,tags:filecount=10,filesize=10M" -XX:+HeapDumpOnOutOfMemoryError -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10 -Xms512m -Xmx1024m -jar "C:\Program Files (x86)\trendz\lib\trendz.jar" 
+2025-06-03 16:24:38,673 INFO  - Starting java  -Dplatform=windows "-Dinstall.data_dir=C:\Program Files (x86)\trendz\data" "-Xlog:gc*,heap*,age*,safepoint=debug:file=C:\Program Files (x86)\trendz\logs\gc.log:time,uptime,level,tags:filecount=10,filesize=10M" -XX:+HeapDumpOnOutOfMemoryError -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10 -Xms512m -Xmx1024m -jar "C:\Program Files (x86)\trendz\lib\trendz.jar" 
+2025-06-03 16:24:38,678 INFO  - Started 13884
+2025-06-03 16:36:29,622 INFO  - Stopping trendz
+2025-06-03 16:36:29,622 DEBUG - ProcessKill 13884
+2025-06-03 16:36:29,931 INFO  - Found child process: 14500 Name: conhost.exe
+2025-06-03 16:36:30,093 INFO  - Stopping process 14500
+2025-06-03 16:36:30,109 INFO  - Send SIGINT 14500
+2025-06-03 16:36:30,109 WARN  - SIGINT to 14500 failed - Killing as fallback
+2025-06-03 16:36:30,125 INFO  - Stopping process 13884
+2025-06-03 16:36:30,141 INFO  - Send SIGINT 13884
+2025-06-03 16:36:30,141 WARN  - SIGINT to 13884 failed - Killing as fallback
+2025-06-03 16:36:30,147 INFO  - Finished trendz
+2025-06-03 16:36:30,147 INFO  - Completed. Exit code is 0
+2025-06-04 17:13:00,455 INFO  - Starting ServiceWrapper in the service mode
+2025-06-04 17:13:00,478 INFO  - Starting java  -Dplatform=windows "-Dinstall.data_dir=C:\Program Files (x86)\trendz\data" "-Xlog:gc*,heap*,age*,safepoint=debug:file=C:\Program Files (x86)\trendz\logs\gc.log:time,uptime,level,tags:filecount=10,filesize=10M" -XX:+HeapDumpOnOutOfMemoryError -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10 -Xms512m -Xmx1024m -jar "C:\Program Files (x86)\trendz\lib\trendz.jar" 
+2025-06-04 17:13:00,483 INFO  - Starting java  -Dplatform=windows "-Dinstall.data_dir=C:\Program Files (x86)\trendz\data" "-Xlog:gc*,heap*,age*,safepoint=debug:file=C:\Program Files (x86)\trendz\logs\gc.log:time,uptime,level,tags:filecount=10,filesize=10M" -XX:+HeapDumpOnOutOfMemoryError -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10 -Xms512m -Xmx1024m -jar "C:\Program Files (x86)\trendz\lib\trendz.jar" 
+2025-06-04 17:13:00,493 INFO  - Started 9468
+2025-06-04 17:15:39,743 INFO  - Starting ServiceWrapper in the CLI mode
+2025-06-04 17:15:40,465 FATAL - Unhandled exception
+System.Exception: Installation failure: Service with id 'trendz' already exists
+   at winsw.WrapperService.Run(String[] _args, ServiceDescriptor descriptor)
+   at winsw.WrapperService.Main(String[] args)
+2025-06-04 17:16:15,814 INFO  - Stopping trendz
+2025-06-04 17:16:15,814 DEBUG - ProcessKill 9468
+2025-06-04 17:16:16,019 INFO  - Found child process: 9516 Name: conhost.exe
+2025-06-04 17:16:16,191 INFO  - Stopping process 9516
+2025-06-04 17:16:16,223 INFO  - Send SIGINT 9516
+2025-06-04 17:16:16,223 WARN  - SIGINT to 9516 failed - Killing as fallback
+2025-06-04 17:16:16,223 INFO  - Stopping process 9468
+2025-06-04 17:16:16,254 INFO  - Send SIGINT 9468
+2025-06-04 17:16:16,254 WARN  - SIGINT to 9468 failed - Killing as fallback
+2025-06-04 17:16:16,263 INFO  - Finished trendz
+2025-06-04 17:16:16,263 INFO  - Completed. Exit code is 0
+2025-06-04 17:16:22,222 INFO  - Starting ServiceWrapper in the service mode
+2025-06-04 17:16:22,238 INFO  - Starting java  -Dplatform=windows "-Dinstall.data_dir=C:\Program Files (x86)\trendz\data" "-Xlog:gc*,heap*,age*,safepoint=debug:file=C:\Program Files (x86)\trendz\logs\gc.log:time,uptime,level,tags:filecount=10,filesize=10M" -XX:+HeapDumpOnOutOfMemoryError -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10 -Xms512m -Xmx1024m -jar "C:\Program Files (x86)\trendz\lib\trendz.jar" 
+2025-06-04 17:16:22,241 INFO  - Starting java  -Dplatform=windows "-Dinstall.data_dir=C:\Program Files (x86)\trendz\data" "-Xlog:gc*,heap*,age*,safepoint=debug:file=C:\Program Files (x86)\trendz\logs\gc.log:time,uptime,level,tags:filecount=10,filesize=10M" -XX:+HeapDumpOnOutOfMemoryError -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10 -Xms512m -Xmx1024m -jar "C:\Program Files (x86)\trendz\lib\trendz.jar" 
+2025-06-04 17:16:22,244 INFO  - Started 19212
+2025-06-04 17:28:24,832 INFO  - Stopping trendz
+2025-06-04 17:28:24,832 DEBUG - ProcessKill 19212
+2025-06-04 17:28:25,051 INFO  - Found child process: 19244 Name: conhost.exe
+2025-06-04 17:28:25,188 INFO  - Stopping process 19244
+2025-06-04 17:28:25,209 INFO  - Send SIGINT 19244
+2025-06-04 17:28:25,209 WARN  - SIGINT to 19244 failed - Killing as fallback
+2025-06-04 17:28:25,209 INFO  - Stopping process 19212
+2025-06-04 17:28:25,241 INFO  - Send SIGINT 19212
+2025-06-04 17:28:25,241 WARN  - SIGINT to 19212 failed - Killing as fallback
+2025-06-04 17:28:25,241 INFO  - Finished trendz
+2025-06-04 17:28:25,241 INFO  - Completed. Exit code is 0
+2025-06-04 17:28:36,606 INFO  - Starting ServiceWrapper in the service mode
+2025-06-04 17:28:36,622 INFO  - Starting java  -Dplatform=windows "-Dinstall.data_dir=C:\Program Files (x86)\trendz\data" "-Xlog:gc*,heap*,age*,safepoint=debug:file=C:\Program Files (x86)\trendz\logs\gc.log:time,uptime,level,tags:filecount=10,filesize=10M" -XX:+HeapDumpOnOutOfMemoryError -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10 -Xms512m -Xmx1024m -jar "C:\Program Files (x86)\trendz\lib\trendz.jar" 
+2025-06-04 17:28:36,622 INFO  - Starting java  -Dplatform=windows "-Dinstall.data_dir=C:\Program Files (x86)\trendz\data" "-Xlog:gc*,heap*,age*,safepoint=debug:file=C:\Program Files (x86)\trendz\logs\gc.log:time,uptime,level,tags:filecount=10,filesize=10M" -XX:+HeapDumpOnOutOfMemoryError -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10 -Xms512m -Xmx1024m -jar "C:\Program Files (x86)\trendz\lib\trendz.jar" 
+2025-06-04 17:28:36,622 INFO  - Started 17320
+2025-06-04 17:29:56,579 INFO  - Stopping trendz
+2025-06-04 17:29:56,579 DEBUG - ProcessKill 17320
+2025-06-04 17:29:56,799 INFO  - Found child process: 13024 Name: conhost.exe
+2025-06-04 17:29:56,940 INFO  - Stopping process 13024
+2025-06-04 17:29:56,961 INFO  - Send SIGINT 13024
+2025-06-04 17:29:56,961 WARN  - SIGINT to 13024 failed - Killing as fallback
+2025-06-04 17:29:56,961 INFO  - Stopping process 17320
+2025-06-04 17:29:56,988 INFO  - Send SIGINT 17320
+2025-06-04 17:29:56,988 WARN  - SIGINT to 17320 failed - Killing as fallback
+2025-06-04 17:29:56,995 INFO  - Finished trendz
+2025-06-04 17:29:56,995 INFO  - Completed. Exit code is 0
+2025-06-04 17:30:02,773 INFO  - Starting ServiceWrapper in the service mode
+2025-06-04 17:30:02,788 INFO  - Starting java  -Dplatform=windows "-Dinstall.data_dir=C:\Program Files (x86)\trendz\data" "-Xlog:gc*,heap*,age*,safepoint=debug:file=C:\Program Files (x86)\trendz\logs\gc.log:time,uptime,level,tags:filecount=10,filesize=10M" -XX:+HeapDumpOnOutOfMemoryError -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10 -Xms512m -Xmx1024m -jar "C:\Program Files (x86)\trendz\lib\trendz.jar" 
+2025-06-04 17:30:02,788 INFO  - Starting java  -Dplatform=windows "-Dinstall.data_dir=C:\Program Files (x86)\trendz\data" "-Xlog:gc*,heap*,age*,safepoint=debug:file=C:\Program Files (x86)\trendz\logs\gc.log:time,uptime,level,tags:filecount=10,filesize=10M" -XX:+HeapDumpOnOutOfMemoryError -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10 -Xms512m -Xmx1024m -jar "C:\Program Files (x86)\trendz\lib\trendz.jar" 
+2025-06-04 17:30:02,788 INFO  - Started 14968
+2025-06-04 17:30:54,261 INFO  - Starting ServiceWrapper in the CLI mode
+2025-06-04 17:30:54,931 FATAL - Unhandled exception
+System.Exception: Installation failure: Service with id 'trendz' already exists
+   at winsw.WrapperService.Run(String[] _args, ServiceDescriptor descriptor)
+   at winsw.WrapperService.Main(String[] args)
+2025-06-04 17:39:51,889 INFO  - Stopping trendz
+2025-06-04 17:39:51,889 DEBUG - ProcessKill 14968
+2025-06-04 17:39:52,109 INFO  - Found child process: 4496 Name: conhost.exe
+2025-06-04 17:39:52,267 INFO  - Stopping process 4496
+2025-06-04 17:39:52,282 INFO  - Send SIGINT 4496
+2025-06-04 17:39:52,298 WARN  - SIGINT to 4496 failed - Killing as fallback
+2025-06-04 17:39:52,298 INFO  - Stopping process 14968
+2025-06-04 17:39:52,330 INFO  - Send SIGINT 14968
+2025-06-04 17:39:52,330 WARN  - SIGINT to 14968 failed - Killing as fallback
+2025-06-04 17:39:52,330 INFO  - Finished trendz
+2025-06-04 17:39:52,330 INFO  - Completed. Exit code is 0
+2025-06-04 20:13:27,576 INFO  - Starting ServiceWrapper in the service mode
+2025-06-04 20:13:27,607 INFO  - Starting java  -Dplatform=windows "-Dinstall.data_dir=C:\Program Files (x86)\trendz\data" "-Xlog:gc*,heap*,age*,safepoint=debug:file=C:\Program Files (x86)\trendz\logs\gc.log:time,uptime,level,tags:filecount=10,filesize=10M" -XX:+HeapDumpOnOutOfMemoryError -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10 -Xms512m -Xmx1024m -jar "C:\Program Files (x86)\trendz\lib\trendz.jar" 
+2025-06-04 20:13:27,607 INFO  - Starting java  -Dplatform=windows "-Dinstall.data_dir=C:\Program Files (x86)\trendz\data" "-Xlog:gc*,heap*,age*,safepoint=debug:file=C:\Program Files (x86)\trendz\logs\gc.log:time,uptime,level,tags:filecount=10,filesize=10M" -XX:+HeapDumpOnOutOfMemoryError -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10 -Xms512m -Xmx1024m -jar "C:\Program Files (x86)\trendz\lib\trendz.jar" 
+2025-06-04 20:13:27,622 INFO  - Started 19120
+2025-06-04 20:13:42,521 INFO  - Stopping trendz
+2025-06-04 20:13:42,521 DEBUG - ProcessKill 19120
+2025-06-04 20:13:42,789 INFO  - Found child process: 12596 Name: conhost.exe
+2025-06-04 20:13:43,011 INFO  - Stopping process 12596
+2025-06-04 20:13:43,042 INFO  - Send SIGINT 12596
+2025-06-04 20:13:43,042 WARN  - SIGINT to 12596 failed - Killing as fallback
+2025-06-04 20:13:43,042 INFO  - Stopping process 19120
+2025-06-04 20:13:43,073 INFO  - Send SIGINT 19120
+2025-06-04 20:13:43,073 WARN  - SIGINT to 19120 failed - Killing as fallback
+2025-06-04 20:13:43,073 INFO  - Finished trendz
+2025-06-04 20:13:43,073 INFO  - Completed. Exit code is 0
+2025-06-04 20:14:34,142 INFO  - Starting ServiceWrapper in the CLI mode
+2025-06-04 20:14:34,865 FATAL - Unhandled exception
+System.Exception: Installation failure: Service with id 'trendz' already exists
+   at winsw.WrapperService.Run(String[] _args, ServiceDescriptor descriptor)
+   at winsw.WrapperService.Main(String[] args)
+2025-06-04 20:54:32,698 INFO  - Starting ServiceWrapper in the service mode
+2025-06-04 20:54:32,736 INFO  - Starting java  -Dplatform=windows "-Dinstall.data_dir=C:\Program Files (x86)\trendz\data" "-Xlog:gc*,heap*,age*,safepoint=debug:file=C:\Program Files (x86)\trendz\logs\gc.log:time,uptime,level,tags:filecount=10,filesize=10M" -XX:+HeapDumpOnOutOfMemoryError -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10 -Xms512m -Xmx1024m -jar "C:\Program Files (x86)\trendz\lib\trendz.jar" 
+2025-06-04 20:54:32,743 INFO  - Starting java  -Dplatform=windows "-Dinstall.data_dir=C:\Program Files (x86)\trendz\data" "-Xlog:gc*,heap*,age*,safepoint=debug:file=C:\Program Files (x86)\trendz\logs\gc.log:time,uptime,level,tags:filecount=10,filesize=10M" -XX:+HeapDumpOnOutOfMemoryError -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10 -Xms512m -Xmx1024m -jar "C:\Program Files (x86)\trendz\lib\trendz.jar" 
+2025-06-04 20:54:32,753 INFO  - Started 9640
+2025-06-05 08:30:32,256 INFO  - Starting ServiceWrapper in the service mode
+2025-06-05 08:30:32,320 INFO  - Starting java  -Dplatform=windows "-Dinstall.data_dir=C:\Program Files (x86)\trendz\data" "-Xlog:gc*,heap*,age*,safepoint=debug:file=C:\Program Files (x86)\trendz\logs\gc.log:time,uptime,level,tags:filecount=10,filesize=10M" -XX:+HeapDumpOnOutOfMemoryError -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10 -Xms512m -Xmx1024m -jar "C:\Program Files (x86)\trendz\lib\trendz.jar" 
+2025-06-05 08:30:32,329 INFO  - Starting java  -Dplatform=windows "-Dinstall.data_dir=C:\Program Files (x86)\trendz\data" "-Xlog:gc*,heap*,age*,safepoint=debug:file=C:\Program Files (x86)\trendz\logs\gc.log:time,uptime,level,tags:filecount=10,filesize=10M" -XX:+HeapDumpOnOutOfMemoryError -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10 -Xms512m -Xmx1024m -jar "C:\Program Files (x86)\trendz\lib\trendz.jar" 
+2025-06-05 08:30:32,344 INFO  - Started 9428
+2025-06-05 10:03:25,619 INFO  - Starting ServiceWrapper in the service mode
+2025-06-05 10:03:25,644 INFO  - Starting java  -Dplatform=windows "-Dinstall.data_dir=C:\Program Files (x86)\trendz\data" "-Xlog:gc*,heap*,age*,safepoint=debug:file=C:\Program Files (x86)\trendz\logs\gc.log:time,uptime,level,tags:filecount=10,filesize=10M" -XX:+HeapDumpOnOutOfMemoryError -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10 -Xms512m -Xmx1024m -jar "C:\Program Files (x86)\trendz\lib\trendz.jar" 
+2025-06-05 10:03:25,649 INFO  - Starting java  -Dplatform=windows "-Dinstall.data_dir=C:\Program Files (x86)\trendz\data" "-Xlog:gc*,heap*,age*,safepoint=debug:file=C:\Program Files (x86)\trendz\logs\gc.log:time,uptime,level,tags:filecount=10,filesize=10M" -XX:+HeapDumpOnOutOfMemoryError -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10 -Xms512m -Xmx1024m -jar "C:\Program Files (x86)\trendz\lib\trendz.jar" 
+2025-06-05 10:03:25,659 INFO  - Started 9664
+2025-06-05 14:11:57,341 INFO  - Starting ServiceWrapper in the CLI mode
+2025-06-05 14:11:58,080 FATAL - Unhandled exception
+System.Exception: Installation failure: Service with id 'trendz' already exists
+   at winsw.WrapperService.Run(String[] _args, ServiceDescriptor descriptor)
+   at winsw.WrapperService.Main(String[] args)
+2025-06-05 14:18:40,478 INFO  - Stopping trendz
+2025-06-05 14:18:40,478 DEBUG - ProcessKill 9664
+2025-06-05 14:18:40,730 INFO  - Found child process: 9708 Name: conhost.exe
+2025-06-05 14:18:41,061 INFO  - Stopping process 9708
+2025-06-05 14:18:41,092 INFO  - Send SIGINT 9708
+2025-06-05 14:18:41,092 WARN  - SIGINT to 9708 failed - Killing as fallback
+2025-06-05 14:18:41,092 INFO  - Stopping process 9664
+2025-06-05 14:18:41,124 INFO  - Send SIGINT 9664
+2025-06-05 14:18:41,124 WARN  - SIGINT to 9664 failed - Killing as fallback
+2025-06-05 14:18:41,124 INFO  - Finished trendz
+2025-06-05 14:18:41,124 INFO  - Completed. Exit code is 0
+2025-06-05 14:18:47,577 INFO  - Starting ServiceWrapper in the service mode
+2025-06-05 14:18:47,593 INFO  - Starting java  -Dplatform=windows "-Dinstall.data_dir=C:\Program Files (x86)\trendz\data" "-Xlog:gc*,heap*,age*,safepoint=debug:file=C:\Program Files (x86)\trendz\logs\gc.log:time,uptime,level,tags:filecount=10,filesize=10M" -XX:+HeapDumpOnOutOfMemoryError -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10 -Xms512m -Xmx1024m -jar "C:\Program Files (x86)\trendz\lib\trendz.jar" 
+2025-06-05 14:18:47,593 INFO  - Starting java  -Dplatform=windows "-Dinstall.data_dir=C:\Program Files (x86)\trendz\data" "-Xlog:gc*,heap*,age*,safepoint=debug:file=C:\Program Files (x86)\trendz\logs\gc.log:time,uptime,level,tags:filecount=10,filesize=10M" -XX:+HeapDumpOnOutOfMemoryError -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10 -Xms512m -Xmx1024m -jar "C:\Program Files (x86)\trendz\lib\trendz.jar" 
+2025-06-05 14:18:47,593 INFO  - Started 29532
+2025-06-05 14:19:21,737 INFO  - Starting ServiceWrapper in the CLI mode
+2025-06-05 14:19:22,449 FATAL - Unhandled exception
+System.Exception: Installation failure: Service with id 'trendz' already exists
+   at winsw.WrapperService.Run(String[] _args, ServiceDescriptor descriptor)
+   at winsw.WrapperService.Main(String[] args)
+2025-06-05 14:32:21,040 INFO  - Stopping trendz
+2025-06-05 14:32:21,040 DEBUG - ProcessKill 29532
+2025-06-05 14:32:21,335 INFO  - Found child process: 28888 Name: conhost.exe
+2025-06-05 14:32:21,572 INFO  - Stopping process 28888
+2025-06-05 14:32:21,588 INFO  - Send SIGINT 28888
+2025-06-05 14:32:21,605 WARN  - SIGINT to 28888 failed - Killing as fallback
+2025-06-05 14:32:21,605 INFO  - Stopping process 29532
+2025-06-05 14:32:21,635 INFO  - Send SIGINT 29532
+2025-06-05 14:32:21,635 WARN  - SIGINT to 29532 failed - Killing as fallback
+2025-06-05 14:32:21,635 INFO  - Finished trendz
+2025-06-05 14:32:21,635 INFO  - Completed. Exit code is 0
+2025-06-05 14:33:14,089 INFO  - Starting ServiceWrapper in the CLI mode
+2025-06-05 14:33:14,774 FATAL - Unhandled exception
+System.Exception: Installation failure: Service with id 'trendz' already exists
+   at winsw.WrapperService.Run(String[] _args, ServiceDescriptor descriptor)
+   at winsw.WrapperService.Main(String[] args)
+2025-06-05 14:34:32,198 INFO  - Starting ServiceWrapper in the CLI mode
+2025-06-05 14:34:32,890 INFO  - Uninstalling the service with id 'trendz'
+2025-06-05 14:34:32,906 INFO  - Completed. Exit code is 0
+2025-06-05 14:34:49,323 INFO  - Starting ServiceWrapper in the CLI mode
+2025-06-05 14:34:50,205 INFO  - Completed. Exit code is 0
+2025-06-05 14:35:39,461 INFO  - Starting ServiceWrapper in the CLI mode
+2025-06-05 14:35:40,313 INFO  - Uninstalling the service with id 'trendz'
+2025-06-05 14:35:40,329 INFO  - Completed. Exit code is 0
+2025-06-05 14:36:10,996 INFO  - Starting ServiceWrapper in the CLI mode
+2025-06-05 14:36:11,892 INFO  - Completed. Exit code is 0
+2025-06-05 14:38:12,278 INFO  - Starting ServiceWrapper in the CLI mode
+2025-06-05 14:38:13,183 FATAL - Unhandled exception
+System.Exception: Installation failure: Service with id 'trendz' already exists
+   at winsw.WrapperService.Run(String[] _args, ServiceDescriptor descriptor)
+   at winsw.WrapperService.Main(String[] args)
+2025-06-05 14:39:12,355 INFO  - Starting ServiceWrapper in the CLI mode
+2025-06-05 14:39:13,223 FATAL - Unhandled exception
+System.Exception: Installation failure: Service with id 'trendz' already exists
+   at winsw.WrapperService.Run(String[] _args, ServiceDescriptor descriptor)
+   at winsw.WrapperService.Main(String[] args)
+2025-06-05 14:39:48,471 INFO  - Starting ServiceWrapper in the CLI mode
+2025-06-05 14:39:49,359 FATAL - Unhandled exception
+System.Exception: Installation failure: Service with id 'trendz' already exists
+   at winsw.WrapperService.Run(String[] _args, ServiceDescriptor descriptor)
+   at winsw.WrapperService.Main(String[] args)
+2025-06-05 14:40:27,596 INFO  - Starting ServiceWrapper in the service mode
+2025-06-05 14:40:27,607 INFO  - Starting java  -Dplatform=windows "-Dinstall.data_dir=C:\Program Files (x86)\trendz\data" "-Xlog:gc*,heap*,age*,safepoint=debug:file=C:\Program Files (x86)\trendz\logs\gc.log:time,uptime,level,tags:filecount=10,filesize=10M" -XX:+HeapDumpOnOutOfMemoryError -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10 -Xms512m -Xmx1024m -jar "C:\Program Files (x86)\trendz\lib\trendz.jar" 
+2025-06-05 14:40:27,612 INFO  - Starting java  -Dplatform=windows "-Dinstall.data_dir=C:\Program Files (x86)\trendz\data" "-Xlog:gc*,heap*,age*,safepoint=debug:file=C:\Program Files (x86)\trendz\logs\gc.log:time,uptime,level,tags:filecount=10,filesize=10M" -XX:+HeapDumpOnOutOfMemoryError -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10 -Xms512m -Xmx1024m -jar "C:\Program Files (x86)\trendz\lib\trendz.jar" 
+2025-06-05 14:40:27,612 INFO  - Started 28556
+2025-06-05 14:43:44,880 INFO  - Starting ServiceWrapper in the CLI mode
+2025-06-05 14:43:45,704 FATAL - Unhandled exception
+System.Exception: Installation failure: Service with id 'trendz' already exists
+   at winsw.WrapperService.Run(String[] _args, ServiceDescriptor descriptor)
+   at winsw.WrapperService.Main(String[] args)
+2025-06-05 15:10:49,504 INFO  - Starting ServiceWrapper in the CLI mode
+2025-06-05 15:10:50,263 FATAL - Unhandled exception
+System.Exception: Installation failure: Service with id 'trendz' already exists
+   at winsw.WrapperService.Run(String[] _args, ServiceDescriptor descriptor)
+   at winsw.WrapperService.Main(String[] args)
+2025-06-05 15:12:21,387 INFO  - Stopping trendz
+2025-06-05 15:12:21,387 DEBUG - ProcessKill 28556
+2025-06-05 15:12:21,622 INFO  - Found child process: 14768 Name: conhost.exe
+2025-06-05 15:12:21,764 INFO  - Stopping process 14768
+2025-06-05 15:12:21,795 INFO  - Send SIGINT 14768
+2025-06-05 15:12:21,795 WARN  - SIGINT to 14768 failed - Killing as fallback
+2025-06-05 15:12:21,795 INFO  - Stopping process 28556
+2025-06-05 15:12:21,827 INFO  - Send SIGINT 28556
+2025-06-05 15:12:21,827 WARN  - SIGINT to 28556 failed - Killing as fallback
+2025-06-05 15:12:21,843 INFO  - Finished trendz
+2025-06-05 15:12:21,844 INFO  - Completed. Exit code is 0
+2025-06-05 15:12:36,375 INFO  - Starting ServiceWrapper in the CLI mode
+2025-06-05 15:12:37,260 FATAL - Unhandled exception
+System.Exception: Installation failure: Service with id 'trendz' already exists
+   at winsw.WrapperService.Run(String[] _args, ServiceDescriptor descriptor)
+   at winsw.WrapperService.Main(String[] args)
+2025-06-05 15:13:09,450 INFO  - Starting ServiceWrapper in the service mode
+2025-06-05 15:13:09,461 INFO  - Starting java  -Dplatform=windows "-Dinstall.data_dir=C:\Program Files (x86)\trendz\data" "-Xlog:gc*,heap*,age*,safepoint=debug:file=C:\Program Files (x86)\trendz\logs\gc.log:time,uptime,level,tags:filecount=10,filesize=10M" -XX:+HeapDumpOnOutOfMemoryError -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10 -Xms512m -Xmx1024m -jar "C:\Program Files (x86)\trendz\lib\trendz.jar" 
+2025-06-05 15:13:09,461 INFO  - Starting java  -Dplatform=windows "-Dinstall.data_dir=C:\Program Files (x86)\trendz\data" "-Xlog:gc*,heap*,age*,safepoint=debug:file=C:\Program Files (x86)\trendz\logs\gc.log:time,uptime,level,tags:filecount=10,filesize=10M" -XX:+HeapDumpOnOutOfMemoryError -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10 -Xms512m -Xmx1024m -jar "C:\Program Files (x86)\trendz\lib\trendz.jar" 
+2025-06-05 15:13:09,461 INFO  - Started 28008
+2025-06-05 15:13:44,229 INFO  - Stopping trendz
+2025-06-05 15:13:44,229 DEBUG - ProcessKill 28008
+2025-06-05 15:13:44,490 INFO  - Found child process: 6864 Name: conhost.exe
+2025-06-05 15:13:44,732 INFO  - Stopping process 6864
+2025-06-05 15:13:44,762 INFO  - Send SIGINT 6864
+2025-06-05 15:13:44,772 WARN  - SIGINT to 6864 failed - Killing as fallback
+2025-06-05 15:13:44,772 INFO  - Stopping process 28008
+2025-06-05 15:13:44,802 INFO  - Send SIGINT 28008
+2025-06-05 15:13:44,802 WARN  - SIGINT to 28008 failed - Killing as fallback
+2025-06-05 15:13:44,812 INFO  - Finished trendz
+2025-06-05 15:13:44,812 INFO  - Completed. Exit code is 0
+2025-06-05 15:13:46,893 INFO  - Starting ServiceWrapper in the CLI mode
+2025-06-05 15:13:48,000 INFO  - Uninstalling the service with id 'trendz'
+2025-06-05 15:13:48,010 INFO  - Completed. Exit code is 0
+2025-06-05 15:14:03,829 INFO  - Starting ServiceWrapper in the CLI mode
+2025-06-05 15:14:04,563 INFO  - Completed. Exit code is 0
+2025-06-05 15:17:59,947 INFO  - Starting ServiceWrapper in the service mode
+2025-06-05 15:17:59,959 INFO  - Starting java  -Dplatform=windows "-Dinstall.data_dir=C:\Program Files (x86)\trendz\data" "-Xlog:gc*,heap*,age*,safepoint=debug:file=C:\Program Files (x86)\trendz\logs\gc.log:time,uptime,level,tags:filecount=10,filesize=10M" -XX:+HeapDumpOnOutOfMemoryError -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10 -Xms512m -Xmx1024m -jar "C:\Program Files (x86)\trendz\lib\trendz.jar" 
+2025-06-05 15:17:59,959 INFO  - Starting java  -Dplatform=windows "-Dinstall.data_dir=C:\Program Files (x86)\trendz\data" "-Xlog:gc*,heap*,age*,safepoint=debug:file=C:\Program Files (x86)\trendz\logs\gc.log:time,uptime,level,tags:filecount=10,filesize=10M" -XX:+HeapDumpOnOutOfMemoryError -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10 -Xms512m -Xmx1024m -jar "C:\Program Files (x86)\trendz\lib\trendz.jar" 
+2025-06-05 15:17:59,962 INFO  - Started 19540
+2025-06-05 15:22:45,839 INFO  - Stopping trendz
+2025-06-05 15:22:45,839 DEBUG - ProcessKill 19540
+2025-06-05 15:22:46,128 INFO  - Found child process: 18848 Name: conhost.exe
+2025-06-05 15:22:46,279 INFO  - Stopping process 18848
+2025-06-05 15:22:46,301 INFO  - Send SIGINT 18848
+2025-06-05 15:22:46,301 WARN  - SIGINT to 18848 failed - Killing as fallback
+2025-06-05 15:22:46,309 INFO  - Stopping process 19540
+2025-06-05 15:22:46,339 INFO  - Send SIGINT 19540
+2025-06-05 15:22:46,339 WARN  - SIGINT to 19540 failed - Killing as fallback
+2025-06-05 15:22:46,347 INFO  - Finished trendz
+2025-06-05 15:22:46,350 INFO  - Completed. Exit code is 0
+2025-06-05 15:22:48,405 INFO  - Starting ServiceWrapper in the CLI mode
+2025-06-05 15:22:49,407 INFO  - Uninstalling the service with id 'trendz'
+2025-06-05 15:22:49,422 INFO  - Completed. Exit code is 0
+2025-06-05 15:23:04,114 INFO  - Starting ServiceWrapper in the CLI mode
+2025-06-05 15:23:04,994 INFO  - Completed. Exit code is 0
+2025-06-05 15:23:16,618 INFO  - Starting ServiceWrapper in the service mode
+2025-06-05 15:23:16,633 INFO  - Starting java  -Dplatform=windows "-Dinstall.data_dir=C:\Program Files (x86)\trendz\data" "-Xlog:gc*,heap*,age*,safepoint=debug:file=C:\Program Files (x86)\trendz\logs\gc.log:time,uptime,level,tags:filecount=10,filesize=10M" -XX:+HeapDumpOnOutOfMemoryError -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10 -Xms512m -Xmx1024m -jar "C:\Program Files (x86)\trendz\lib\trendz.jar" 
+2025-06-05 15:23:16,633 INFO  - Starting java  -Dplatform=windows "-Dinstall.data_dir=C:\Program Files (x86)\trendz\data" "-Xlog:gc*,heap*,age*,safepoint=debug:file=C:\Program Files (x86)\trendz\logs\gc.log:time,uptime,level,tags:filecount=10,filesize=10M" -XX:+HeapDumpOnOutOfMemoryError -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10 -Xms512m -Xmx1024m -jar "C:\Program Files (x86)\trendz\lib\trendz.jar" 
+2025-06-05 15:23:16,665 INFO  - Started 15664
+2025-06-05 15:27:41,568 INFO  - Starting ServiceWrapper in the CLI mode
+2025-06-05 15:27:42,435 FATAL - Unhandled exception
+System.Exception: Installation failure: Service with id 'trendz' already exists
+   at winsw.WrapperService.Run(String[] _args, ServiceDescriptor descriptor)
+   at winsw.WrapperService.Main(String[] args)
+2025-06-05 15:29:30,688 INFO  - Starting ServiceWrapper in the CLI mode
+2025-06-05 15:29:31,592 FATAL - Unhandled exception
+System.Exception: Installation failure: Service with id 'trendz' already exists
+   at winsw.WrapperService.Run(String[] _args, ServiceDescriptor descriptor)
+   at winsw.WrapperService.Main(String[] args)
+2025-06-05 15:39:06,439 INFO  - Stopping trendz
+2025-06-05 15:39:06,441 DEBUG - ProcessKill 15664
+2025-06-05 15:39:06,772 INFO  - Found child process: 30484 Name: conhost.exe
+2025-06-05 15:39:07,033 INFO  - Stopping process 30484
+2025-06-05 15:39:07,063 INFO  - Send SIGINT 30484
+2025-06-05 15:39:07,070 WARN  - SIGINT to 30484 failed - Killing as fallback
+2025-06-05 15:39:07,074 INFO  - Stopping process 15664
+2025-06-05 15:39:07,094 INFO  - Send SIGINT 15664
+2025-06-05 15:39:07,164 WARN  - SIGINT to 15664 failed - Killing as fallback
+2025-06-05 15:39:07,168 INFO  - Finished trendz
+2025-06-05 15:39:07,170 INFO  - Completed. Exit code is 0
+2025-06-05 15:39:24,592 INFO  - Starting ServiceWrapper in the CLI mode
+2025-06-05 15:39:25,494 FATAL - Unhandled exception
+System.Exception: Installation failure: Service with id 'trendz' already exists
+   at winsw.WrapperService.Run(String[] _args, ServiceDescriptor descriptor)
+   at winsw.WrapperService.Main(String[] args)
+2025-06-05 15:39:47,647 INFO  - Starting ServiceWrapper in the service mode
+2025-06-05 15:39:47,657 INFO  - Starting java  -Dplatform=windows "-Dinstall.data_dir=C:\Program Files (x86)\trendz\data" "-Xlog:gc*,heap*,age*,safepoint=debug:file=C:\Program Files (x86)\trendz\logs\gc.log:time,uptime,level,tags:filecount=10,filesize=10M" -XX:+HeapDumpOnOutOfMemoryError -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10 -Xms512m -Xmx1024m -jar "C:\Program Files (x86)\trendz\lib\trendz.jar" 
+2025-06-05 15:39:47,657 INFO  - Starting java  -Dplatform=windows "-Dinstall.data_dir=C:\Program Files (x86)\trendz\data" "-Xlog:gc*,heap*,age*,safepoint=debug:file=C:\Program Files (x86)\trendz\logs\gc.log:time,uptime,level,tags:filecount=10,filesize=10M" -XX:+HeapDumpOnOutOfMemoryError -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10 -Xms512m -Xmx1024m -jar "C:\Program Files (x86)\trendz\lib\trendz.jar" 
+2025-06-05 15:39:47,667 INFO  - Started 30356
