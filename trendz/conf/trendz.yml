@@ -13,13 +13,18 @@ server.compression.mime-types: "text/html,text/xml,text/plain,text/css,text/java
 server.compression.min-response-size: 1024
 
 security:
+  enabled: true
+  users:
+    - login: 118ngobach@gmail.com
+      password: ngotruongbach1
   jwt:
     tokenExpirationTime: "${JWT_TOKEN_EXPIRATION_TIME:9000}" # Number of seconds (2.5 hours)
-    tokenIssuer: "${JWT_TOKEN_ISSUER:thingsboard.io}"
-    tokenSigningKey: "${JWT_TOKEN_SIGNING_KEY:thingsboardDefaultSigningKey}"
+    tokenIssuer: "${JWT_TOKEN_ISSUER:app.coreiot.io}"
+    tokenSigningKey: "${JWT_TOKEN_SIGNING_KEY:Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMThuZ29iYWNoQGdtYWlsLmNvbSIsInVzZXJJZCI6IjQyMDQ5YzQwLTQxZTUtMTFmMC04NjYzLWQ3ZTE5NjFlOGNiYSIsInNjb3BlcyI6WyJURU5BTlRfQURNSU4iXSwic2Vzc2lvbklkIjoiODY0M2I1MGItZjZmYi00MDAxLTgxN2ItMjU2NmU4MGYxZjg5IiwiZXhwIjoxNzQ5MTIwMzU2LCJpc3MiOiJjb3JlaW90LmlvIiwiaWF0IjoxNzQ5MTExMzU2LCJmaXJzdE5hbWUiOiJCYWNoIiwibGFzdE5hbWUiOiJOZ28iLCJlbmFibGVkIjp0cnVlLCJpc1B1YmxpYyI6ZmFsc2UsInRlbmFudElkIjoiMWVmNjQ5YjAtZTE4Mi0xMWVmLWFkMDktNTE1Zjc5MGVkOWRmIiwiY3VzdG9tZXJJZCI6IjEzODE0MDAwLTFkZDItMTFiMi04MDgwLTgwODA4MDgwODA4MCJ9.4joazJh3K820_IVF-3lKhDjIzRCi3W6sSZcQgdCNdBjULKSQkZHLYsyF1bAPiDy5Z-npiS4VSNZf_dfCX9pDrg}"
 
 tb.api:
-  url: "${TB_API_URL:http://localhost:8080}"
+  # url: "${TB_API_URL:http://localhost:8080}"
+  url: "${TB_API_URL:https://app.coreiot.io}"
   custom-dns:
     enabled: "${TB_API_CUSTOM_DNS_ENABLE:false}"
     dns-address: "${TB_API_CUSTOM_DNS_ADDRESS:8.8.8.8}"

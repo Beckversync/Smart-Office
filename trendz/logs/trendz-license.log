@@ -1,7 +1,7 @@
-2025-06-03 07:30:55,550 [main] INFO  o.t.license.client.TbLicenseClient - Initializing ThingsBoard License Client, Release Date [2025-05-02]
-2025-06-03 07:31:08,396 [main] INFO  o.t.license.client.TbLicenseClient - Executed activateInstance method.
-2025-06-03 07:31:08,396 [main] INFO  o.t.license.client.TbLicenseClient - instanceId: [I8XPdcC3hX4YpeAjrHtd]
-2025-06-03 07:31:08,412 [main] INFO  o.t.license.client.TbLicenseClient - planData: {
+2025-06-05 01:31:03,333 [main] INFO  o.t.license.client.TbLicenseClient - Initializing ThingsBoard License Client, Release Date [2025-05-02]
+2025-06-05 01:31:03,914 [main] INFO  o.t.license.client.TbLicenseClient - Obtained instance data from file.
+2025-06-05 01:31:03,914 [main] INFO  o.t.license.client.TbLicenseClient - instanceId: [I8XPdcC3hX4YpeAjrHtd]
+2025-06-05 01:31:03,947 [main] INFO  o.t.license.client.TbLicenseClient - planData: {
   "asset_count" : {
     "value" : 10,
     "description" : "The maximum number of assets"
@@ -11,4 +11,237 @@
     "description" : "The maximum number of devices"
   }
 }
-2025-06-03 07:31:08,428 [main] INFO  o.t.license.client.TbLicenseClient - Initialized ThingsBoard License Client with instanceId [I8XPdcC3hX4YpeAjrHtd]
+2025-06-05 01:31:04,983 [main] INFO  o.t.license.client.TbLicenseClient - Executed checkInstance method.
+2025-06-05 01:31:04,983 [main] INFO  o.t.license.client.TbLicenseClient - instanceId: [I8XPdcC3hX4YpeAjrHtd]
+2025-06-05 01:31:04,983 [main] INFO  o.t.license.client.TbLicenseClient - planData: {
+  "asset_count" : {
+    "value" : 10,
+    "description" : "The maximum number of assets"
+  },
+  "device_count" : {
+    "value" : 10,
+    "description" : "The maximum number of devices"
+  }
+}
+2025-06-05 01:31:04,983 [main] INFO  o.t.license.client.TbLicenseClient - Initialized ThingsBoard License Client with instanceId [I8XPdcC3hX4YpeAjrHtd]
+2025-06-05 02:00:45,486 [SpringApplicationShutdownHook] INFO  o.t.l.client.AbstractTbLicenseClient - Stopping ThingsBoard License Client...
+2025-06-05 03:03:55,730 [main] INFO  o.t.license.client.TbLicenseClient - Initializing ThingsBoard License Client, Release Date [2025-05-02]
+2025-06-05 03:03:56,028 [main] INFO  o.t.license.client.TbLicenseClient - Obtained instance data from file.
+2025-06-05 03:03:56,028 [main] INFO  o.t.license.client.TbLicenseClient - instanceId: [I8XPdcC3hX4YpeAjrHtd]
+2025-06-05 03:03:56,067 [main] INFO  o.t.license.client.TbLicenseClient - planData: {
+  "asset_count" : {
+    "value" : 10,
+    "description" : "The maximum number of assets"
+  },
+  "device_count" : {
+    "value" : 10,
+    "description" : "The maximum number of devices"
+  }
+}
+2025-06-05 03:03:56,169 [main] ERROR o.t.license.client.TbLicenseClient - License Error: CONNECTION_ERROR(400) - Failed to connect to ThingsBoard License Server!
+2025-06-05 03:03:56,169 [main] INFO  o.t.license.client.TbLicenseClient - Initialized ThingsBoard License Client with instanceId [I8XPdcC3hX4YpeAjrHtd]
+2025-06-05 07:11:02,238 [pool-35-thread-1] INFO  o.t.license.client.TbLicenseClient - Executed checkInstance method.
+2025-06-05 07:11:02,238 [pool-35-thread-1] INFO  o.t.license.client.TbLicenseClient - instanceId: [I8XPdcC3hX4YpeAjrHtd]
+2025-06-05 07:11:02,246 [pool-35-thread-1] INFO  o.t.license.client.TbLicenseClient - planData: {
+  "asset_count" : {
+    "value" : 10,
+    "description" : "The maximum number of assets"
+  },
+  "device_count" : {
+    "value" : 10,
+    "description" : "The maximum number of devices"
+  }
+}
+2025-06-05 07:11:02,554 [pool-35-thread-1] INFO  o.t.license.client.TbLicenseClient - Executed checkInstance method.
+2025-06-05 07:11:02,554 [pool-35-thread-1] INFO  o.t.license.client.TbLicenseClient - instanceId: [I8XPdcC3hX4YpeAjrHtd]
+2025-06-05 07:11:02,554 [pool-35-thread-1] INFO  o.t.license.client.TbLicenseClient - planData: {
+  "asset_count" : {
+    "value" : 10,
+    "description" : "The maximum number of assets"
+  },
+  "device_count" : {
+    "value" : 10,
+    "description" : "The maximum number of devices"
+  }
+}
+2025-06-05 07:11:02,789 [pool-35-thread-1] INFO  o.t.license.client.TbLicenseClient - Executed checkInstance method.
+2025-06-05 07:11:02,789 [pool-35-thread-1] INFO  o.t.license.client.TbLicenseClient - instanceId: [I8XPdcC3hX4YpeAjrHtd]
+2025-06-05 07:11:02,789 [pool-35-thread-1] INFO  o.t.license.client.TbLicenseClient - planData: {
+  "asset_count" : {
+    "value" : 10,
+    "description" : "The maximum number of assets"
+  },
+  "device_count" : {
+    "value" : 10,
+    "description" : "The maximum number of devices"
+  }
+}
+2025-06-05 07:11:03,074 [pool-35-thread-1] INFO  o.t.license.client.TbLicenseClient - Executed checkInstance method.
+2025-06-05 07:11:03,074 [pool-35-thread-1] INFO  o.t.license.client.TbLicenseClient - instanceId: [I8XPdcC3hX4YpeAjrHtd]
+2025-06-05 07:11:03,074 [pool-35-thread-1] INFO  o.t.license.client.TbLicenseClient - planData: {
+  "asset_count" : {
+    "value" : 10,
+    "description" : "The maximum number of assets"
+  },
+  "device_count" : {
+    "value" : 10,
+    "description" : "The maximum number of devices"
+  }
+}
+2025-06-05 07:19:13,838 [main] INFO  o.t.license.client.TbLicenseClient - Initializing ThingsBoard License Client, Release Date [2025-05-02]
+2025-06-05 07:19:14,174 [main] INFO  o.t.license.client.TbLicenseClient - Obtained instance data from file.
+2025-06-05 07:19:14,174 [main] INFO  o.t.license.client.TbLicenseClient - instanceId: [I8XPdcC3hX4YpeAjrHtd]
+2025-06-05 07:19:14,219 [main] INFO  o.t.license.client.TbLicenseClient - planData: {
+  "asset_count" : {
+    "value" : 10,
+    "description" : "The maximum number of assets"
+  },
+  "device_count" : {
+    "value" : 10,
+    "description" : "The maximum number of devices"
+  }
+}
+2025-06-05 07:19:15,159 [main] INFO  o.t.license.client.TbLicenseClient - Executed checkInstance method.
+2025-06-05 07:19:15,163 [main] INFO  o.t.license.client.TbLicenseClient - instanceId: [I8XPdcC3hX4YpeAjrHtd]
+2025-06-05 07:19:15,163 [main] INFO  o.t.license.client.TbLicenseClient - planData: {
+  "asset_count" : {
+    "value" : 10,
+    "description" : "The maximum number of assets"
+  },
+  "device_count" : {
+    "value" : 10,
+    "description" : "The maximum number of devices"
+  }
+}
+2025-06-05 07:19:15,163 [main] INFO  o.t.license.client.TbLicenseClient - Initialized ThingsBoard License Client with instanceId [I8XPdcC3hX4YpeAjrHtd]
+2025-06-05 07:40:53,799 [main] INFO  o.t.license.client.TbLicenseClient - Initializing ThingsBoard License Client, Release Date [2025-05-02]
+2025-06-05 07:40:54,332 [main] INFO  o.t.license.client.TbLicenseClient - Obtained instance data from file.
+2025-06-05 07:40:54,332 [main] INFO  o.t.license.client.TbLicenseClient - instanceId: [I8XPdcC3hX4YpeAjrHtd]
+2025-06-05 07:40:54,395 [main] INFO  o.t.license.client.TbLicenseClient - planData: {
+  "asset_count" : {
+    "value" : 10,
+    "description" : "The maximum number of assets"
+  },
+  "device_count" : {
+    "value" : 10,
+    "description" : "The maximum number of devices"
+  }
+}
+2025-06-05 07:40:55,609 [main] INFO  o.t.license.client.TbLicenseClient - Executed checkInstance method.
+2025-06-05 07:40:55,610 [main] INFO  o.t.license.client.TbLicenseClient - instanceId: [I8XPdcC3hX4YpeAjrHtd]
+2025-06-05 07:40:55,613 [main] INFO  o.t.license.client.TbLicenseClient - planData: {
+  "asset_count" : {
+    "value" : 10,
+    "description" : "The maximum number of assets"
+  },
+  "device_count" : {
+    "value" : 10,
+    "description" : "The maximum number of devices"
+  }
+}
+2025-06-05 07:40:55,613 [main] INFO  o.t.license.client.TbLicenseClient - Initialized ThingsBoard License Client with instanceId [I8XPdcC3hX4YpeAjrHtd]
+2025-06-05 08:13:35,420 [main] INFO  o.t.license.client.TbLicenseClient - Initializing ThingsBoard License Client, Release Date [2025-05-02]
+2025-06-05 08:13:35,936 [main] INFO  o.t.license.client.TbLicenseClient - Obtained instance data from file.
+2025-06-05 08:13:35,936 [main] INFO  o.t.license.client.TbLicenseClient - instanceId: [I8XPdcC3hX4YpeAjrHtd]
+2025-06-05 08:13:35,982 [main] INFO  o.t.license.client.TbLicenseClient - planData: {
+  "asset_count" : {
+    "value" : 10,
+    "description" : "The maximum number of assets"
+  },
+  "device_count" : {
+    "value" : 10,
+    "description" : "The maximum number of devices"
+  }
+}
+2025-06-05 08:13:37,486 [main] INFO  o.t.license.client.TbLicenseClient - Executed checkInstance method.
+2025-06-05 08:13:37,486 [main] INFO  o.t.license.client.TbLicenseClient - instanceId: [I8XPdcC3hX4YpeAjrHtd]
+2025-06-05 08:13:37,486 [main] INFO  o.t.license.client.TbLicenseClient - planData: {
+  "asset_count" : {
+    "value" : 10,
+    "description" : "The maximum number of assets"
+  },
+  "device_count" : {
+    "value" : 10,
+    "description" : "The maximum number of devices"
+  }
+}
+2025-06-05 08:13:37,486 [main] INFO  o.t.license.client.TbLicenseClient - Initialized ThingsBoard License Client with instanceId [I8XPdcC3hX4YpeAjrHtd]
+2025-06-05 08:18:28,888 [main] INFO  o.t.license.client.TbLicenseClient - Initializing ThingsBoard License Client, Release Date [2025-05-02]
+2025-06-05 08:18:29,424 [main] INFO  o.t.license.client.TbLicenseClient - Obtained instance data from file.
+2025-06-05 08:18:29,424 [main] INFO  o.t.license.client.TbLicenseClient - instanceId: [I8XPdcC3hX4YpeAjrHtd]
+2025-06-05 08:18:29,473 [main] INFO  o.t.license.client.TbLicenseClient - planData: {
+  "asset_count" : {
+    "value" : 10,
+    "description" : "The maximum number of assets"
+  },
+  "device_count" : {
+    "value" : 10,
+    "description" : "The maximum number of devices"
+  }
+}
+2025-06-05 08:18:30,623 [main] INFO  o.t.license.client.TbLicenseClient - Executed checkInstance method.
+2025-06-05 08:18:30,623 [main] INFO  o.t.license.client.TbLicenseClient - instanceId: [I8XPdcC3hX4YpeAjrHtd]
+2025-06-05 08:18:30,623 [main] INFO  o.t.license.client.TbLicenseClient - planData: {
+  "asset_count" : {
+    "value" : 10,
+    "description" : "The maximum number of assets"
+  },
+  "device_count" : {
+    "value" : 10,
+    "description" : "The maximum number of devices"
+  }
+}
+2025-06-05 08:18:30,623 [main] INFO  o.t.license.client.TbLicenseClient - Initialized ThingsBoard License Client with instanceId [I8XPdcC3hX4YpeAjrHtd]
+2025-06-05 08:23:41,654 [main] INFO  o.t.license.client.TbLicenseClient - Initializing ThingsBoard License Client, Release Date [2025-05-02]
+2025-06-05 08:23:42,217 [main] INFO  o.t.license.client.TbLicenseClient - Obtained instance data from file.
+2025-06-05 08:23:42,217 [main] INFO  o.t.license.client.TbLicenseClient - instanceId: [I8XPdcC3hX4YpeAjrHtd]
+2025-06-05 08:23:42,257 [main] INFO  o.t.license.client.TbLicenseClient - planData: {
+  "asset_count" : {
+    "value" : 10,
+    "description" : "The maximum number of assets"
+  },
+  "device_count" : {
+    "value" : 10,
+    "description" : "The maximum number of devices"
+  }
+}
+2025-06-05 08:23:43,402 [main] INFO  o.t.license.client.TbLicenseClient - Executed checkInstance method.
+2025-06-05 08:23:43,402 [main] INFO  o.t.license.client.TbLicenseClient - instanceId: [I8XPdcC3hX4YpeAjrHtd]
+2025-06-05 08:23:43,409 [main] INFO  o.t.license.client.TbLicenseClient - planData: {
+  "asset_count" : {
+    "value" : 10,
+    "description" : "The maximum number of assets"
+  },
+  "device_count" : {
+    "value" : 10,
+    "description" : "The maximum number of devices"
+  }
+}
+2025-06-05 08:23:43,409 [main] INFO  o.t.license.client.TbLicenseClient - Initialized ThingsBoard License Client with instanceId [I8XPdcC3hX4YpeAjrHtd]
+2025-06-05 08:40:15,271 [main] INFO  o.t.license.client.TbLicenseClient - Initializing ThingsBoard License Client, Release Date [2025-05-02]
+2025-06-05 08:40:15,885 [main] INFO  o.t.license.client.TbLicenseClient - Obtained instance data from file.
+2025-06-05 08:40:15,885 [main] INFO  o.t.license.client.TbLicenseClient - instanceId: [I8XPdcC3hX4YpeAjrHtd]
+2025-06-05 08:40:15,932 [main] INFO  o.t.license.client.TbLicenseClient - planData: {
+  "asset_count" : {
+    "value" : 10,
+    "description" : "The maximum number of assets"
+  },
+  "device_count" : {
+    "value" : 10,
+    "description" : "The maximum number of devices"
+  }
+}
+2025-06-05 08:40:17,117 [main] INFO  o.t.license.client.TbLicenseClient - Executed checkInstance method.
+2025-06-05 08:40:17,117 [main] INFO  o.t.license.client.TbLicenseClient - instanceId: [I8XPdcC3hX4YpeAjrHtd]
+2025-06-05 08:40:17,117 [main] INFO  o.t.license.client.TbLicenseClient - planData: {
+  "asset_count" : {
+    "value" : 10,
+    "description" : "The maximum number of assets"
+  },
+  "device_count" : {
+    "value" : 10,
+    "description" : "The maximum number of devices"
+  }
+}
+2025-06-05 08:40:17,117 [main] INFO  o.t.license.client.TbLicenseClient - Initialized ThingsBoard License Client with instanceId [I8XPdcC3hX4YpeAjrHtd]
+2025-06-05 08:48:48,929 [pool-34-thread-1] INFO  o.t.t.s.BaseSubscriptionService - Subscription validated SubscriptionState(valid=true, checkTs=1749113328929, actualAssets=1, allowedAssets=10, actualDevices=9, allowedDevices=10, name=null, errorMsg=null)

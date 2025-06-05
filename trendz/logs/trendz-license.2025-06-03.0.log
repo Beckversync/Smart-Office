@@ -1,0 +1,40 @@
+2025-06-03 07:30:55,550 [main] INFO  o.t.license.client.TbLicenseClient - Initializing ThingsBoard License Client, Release Date [2025-05-02]
+2025-06-03 07:31:08,396 [main] INFO  o.t.license.client.TbLicenseClient - Executed activateInstance method.
+2025-06-03 07:31:08,396 [main] INFO  o.t.license.client.TbLicenseClient - instanceId: [I8XPdcC3hX4YpeAjrHtd]
+2025-06-03 07:31:08,412 [main] INFO  o.t.license.client.TbLicenseClient - planData: {
+  "asset_count" : {
+    "value" : 10,
+    "description" : "The maximum number of assets"
+  },
+  "device_count" : {
+    "value" : 10,
+    "description" : "The maximum number of devices"
+  }
+}
+2025-06-03 07:31:08,428 [main] INFO  o.t.license.client.TbLicenseClient - Initialized ThingsBoard License Client with instanceId [I8XPdcC3hX4YpeAjrHtd]
+2025-06-03 09:25:01,887 [main] INFO  o.t.license.client.TbLicenseClient - Initializing ThingsBoard License Client, Release Date [2025-05-02]
+2025-06-03 09:25:02,465 [main] INFO  o.t.license.client.TbLicenseClient - Obtained instance data from file.
+2025-06-03 09:25:02,465 [main] INFO  o.t.license.client.TbLicenseClient - instanceId: [I8XPdcC3hX4YpeAjrHtd]
+2025-06-03 09:25:02,511 [main] INFO  o.t.license.client.TbLicenseClient - planData: {
+  "asset_count" : {
+    "value" : 10,
+    "description" : "The maximum number of assets"
+  },
+  "device_count" : {
+    "value" : 10,
+    "description" : "The maximum number of devices"
+  }
+}
+2025-06-03 09:25:04,047 [main] INFO  o.t.license.client.TbLicenseClient - Executed checkInstance method.
+2025-06-03 09:25:04,048 [main] INFO  o.t.license.client.TbLicenseClient - instanceId: [I8XPdcC3hX4YpeAjrHtd]
+2025-06-03 09:25:04,052 [main] INFO  o.t.license.client.TbLicenseClient - planData: {
+  "asset_count" : {
+    "value" : 10,
+    "description" : "The maximum number of assets"
+  },
+  "device_count" : {
+    "value" : 10,
+    "description" : "The maximum number of devices"
+  }
+}
+2025-06-03 09:25:04,075 [main] INFO  o.t.license.client.TbLicenseClient - Initialized ThingsBoard License Client with instanceId [I8XPdcC3hX4YpeAjrHtd]
