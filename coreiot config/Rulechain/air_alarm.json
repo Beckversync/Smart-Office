@@ -1,0 +1,101 @@
+{
+  "ruleChain": {
+    "name": "Air alarm",
+    "type": "CORE",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null,
+    "additionalInfo": {
+      "description": ""
+    }
+  },
+  "metadata": {
+    "version": 3,
+    "firstNodeIndex": 2,
+    "nodes": [
+      {
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "co2 is above 800ppm",
+        "debugSettings": null,
+        "singletonMode": false,
+        "queueName": null,
+        "configurationVersion": 0,
+        "configuration": {
+          "alarmType": "General Alarm",
+          "scriptLang": "TBEL",
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+          "alarmDetailsBuildTbel": "var details = {};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+          "severity": "CRITICAL",
+          "propagate": false,
+          "propagateToOwner": false,
+          "propagateToOwnerHierarchy": false,
+          "propagateToTenant": false,
+          "useMessageAlarmData": false,
+          "overwriteAlarmDetails": false,
+          "dynamicSeverity": false,
+          "relationTypes": []
+        },
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 580,
+          "layoutY": 81
+        }
+      },
+      {
+        "type": "org.thingsboard.rule.engine.action.TbClearAlarmNode",
+        "name": "co2 is not above 800ppm",
+        "debugSettings": null,
+        "singletonMode": false,
+        "queueName": null,
+        "configurationVersion": 0,
+        "configuration": {
+          "alarmType": "General Alarm",
+          "scriptLang": "TBEL",
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+          "alarmDetailsBuildTbel": "var details = {};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;"
+        },
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 579,
+          "layoutY": 200
+        }
+      },
+      {
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "isPolution",
+        "debugSettings": {
+          "failuresEnabled": false,
+          "allEnabled": false,
+          "allEnabledUntil": 0
+        },
+        "singletonMode": false,
+        "queueName": null,
+        "configurationVersion": 0,
+        "configuration": {
+          "scriptLang": "TBEL",
+          "jsScript": "return msg.temperature > 20;",
+          "tbelScript": "return msg.co2 > 800;"
+        },
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 330,
+          "layoutY": 147
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 2,
+        "toIndex": 0,
+        "type": "True"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 1,
+        "type": "False"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}

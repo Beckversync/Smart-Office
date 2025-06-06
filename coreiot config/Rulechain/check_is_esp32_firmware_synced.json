@@ -1,0 +1,103 @@
+{
+  "ruleChain": {
+    "name": "Check is ESP32 firmware synced",
+    "type": "CORE",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null,
+    "additionalInfo": {
+      "description": "Check is ESP32 firmware synced"
+    }
+  },
+  "metadata": {
+    "version": 2,
+    "firstNodeIndex": 1,
+    "nodes": [
+      {
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode",
+        "name": "Save 'fwStateIsSynced' attribute",
+        "debugSettings": {
+          "failuresEnabled": true,
+          "allEnabled": false,
+          "allEnabledUntil": 1748745739092
+        },
+        "singletonMode": false,
+        "queueName": null,
+        "configurationVersion": 3,
+        "configuration": {
+          "scope": "SERVER_SCOPE",
+          "updateAttributesOnlyOnValueChange": false,
+          "notifyDevice": true,
+          "sendAttributesUpdatedNotification": false,
+          "processingSettings": {
+            "type": "ON_EVERY_MESSAGE"
+          }
+        },
+        "additionalInfo": {
+          "layoutX": 273,
+          "layoutY": 423
+        }
+      },
+      {
+        "type": "org.thingsboard.rule.engine.metadata.TbGetAttributesNode",
+        "name": "Add attributes to metadata",
+        "debugSettings": {
+          "failuresEnabled": true,
+          "allEnabled": false,
+          "allEnabledUntil": 1748745739092
+        },
+        "singletonMode": false,
+        "queueName": null,
+        "configurationVersion": 1,
+        "configuration": {
+          "clientAttributeNames": [
+            "currentFwVer"
+          ],
+          "sharedAttributeNames": [],
+          "serverAttributeNames": [
+            "lastTargetFwVer"
+          ],
+          "latestTsKeyNames": [],
+          "fetchTo": "METADATA"
+        },
+        "additionalInfo": {
+          "layoutX": 125,
+          "layoutY": 225
+        }
+      },
+      {
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "Update server attribute 'fwStateIsSynced'",
+        "debugSettings": {
+          "failuresEnabled": true,
+          "allEnabled": false,
+          "allEnabledUntil": 1748745739092
+        },
+        "singletonMode": false,
+        "queueName": null,
+        "configurationVersion": 0,
+        "configuration": {
+          "jsScript": "msg.fwStateIsSynced = false;\n\nif (metadata.cs_currentFwVer) {\n    msg.fwStateIsSynced = metadata.cs_currentFwVer === metadata.ss_lastTargetFwVer;\n}\n\nreturn {msg: msg, metadata: metadata, msgType: 'POST_ATTRIBUTES_REQUEST'};"
+        },
+        "additionalInfo": {
+          "layoutX": 200,
+          "layoutY": 325
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 1,
+        "toIndex": 2,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 0,
+        "type": "Success"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "ruleChain": {
+    "name": "Check_Temp",
+    "type": "CORE",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": true,
+    "configuration": null,
+    "additionalInfo": {
+      "description": ""
+    }
+  },
+  "metadata": {
+    "version": 4,
+    "firstNodeIndex": 0,
+    "nodes": [
+      {
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "checkTemp",
+        "debugSettings": null,
+        "singletonMode": false,
+        "queueName": null,
+        "configurationVersion": 0,
+        "configuration": {
+          "scriptLang": "TBEL",
+          "jsScript": "return msg.temperature > 20;",
+          "tbelScript": "return msg.temperature > 30;"
+        },
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 408,
+          "layoutY": 161
+        }
+      },
+      {
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "checkTemp",
+        "debugSettings": null,
+        "singletonMode": false,
+        "queueName": null,
+        "configurationVersion": 0,
+        "configuration": {
+          "scriptLang": "TBEL",
+          "jsScript": "return {msg: msg, metadata: metadata, msgType: msgType};",
+          "tbelScript": "var newMsg = {};\r\n\r\nnewMsg.method = 'setEnabled';\r\nnewMsg.params = true;\r\n\r\nvar msgType = 'RPC_CALL_FROM_SERVER_TO_DEVICE';  // msgType cần đúng kiểu của RPC call\r\n\r\nreturn { msg: newMsg, metadata: metadata, msgType: msgType };\r\n"
+        },
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 688,
+          "layoutY": 153
+        }
+      },
+      {
+        "type": "org.thingsboard.rule.engine.rpc.TbSendRPCRequestNode",
+        "name": "rpc res",
+        "debugSettings": null,
+        "singletonMode": false,
+        "queueName": null,
+        "configurationVersion": 0,
+        "configuration": {
+          "timeoutInSeconds": 60
+        },
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 992,
+          "layoutY": 138
+        }
+      },
+      {
+        "type": "org.thingsboard.rule.engine.action.TbLogNode",
+        "name": "rpc log",
+        "debugSettings": null,
+        "singletonMode": false,
+        "queueName": null,
+        "configurationVersion": 0,
+        "configuration": {
+          "scriptLang": "TBEL",
+          "jsScript": "return '\\nIncoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);",
+          "tbelScript": "return '\\nIncoming message:\\n' + JSON.stringify(msg) + '\\nIncoming metadata:\\n' + JSON.stringify(metadata);"
+        },
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 967,
+          "layoutY": 285
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 0,
+        "toIndex": 1,
+        "type": "True"
+      },
+      {
+        "fromIndex": 0,
+        "toIndex": 3,
+        "type": "False"
+      },
+      {
+        "fromIndex": 1,
+        "toIndex": 2,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 1,
+        "toIndex": 3,
+        "type": "Failure"
+      },
+      {
+        "fromIndex": 1,
+        "toIndex": 3,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 3,
+        "type": "Failure"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 3,
+        "type": "Success"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}
